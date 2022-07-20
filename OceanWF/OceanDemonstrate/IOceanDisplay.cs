@@ -7,6 +7,6 @@ namespace OceanLibrary
         void Display(int iteration, Ocean displayOcean, DataGridView dataGridView, Label prey,
             Label predator, Label obstacle, Label allIteration, ProgressBar nowIteration);
 
-        void CountInfo(Ocean displayOcean);
+        void CountInfo(Ocean displayOcean);   
     }
 }

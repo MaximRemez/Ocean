@@ -8,6 +8,7 @@ namespace OceanWF.OceanDemonstrate
 {
     public partial class Ocean : Form
     {
+  
         #region Variables
 
         readonly OceanLibrary.Ocean myOcean = new OceanLibrary.Ocean();
@@ -27,7 +28,7 @@ namespace OceanWF.OceanDemonstrate
             InitializeComponent();        
         }
         #endregion
-       
+        
         #region Events
 
         private void Ocean_Load(object sender, EventArgs e)
@@ -134,8 +135,8 @@ namespace OceanWF.OceanDemonstrate
                 myOcean.Run();
 
                 oceanDisplay.CountInfo(myOcean);
-                oceanDisplay.Display(nowIteration, myOcean, oceanDataGridView, preyShowLabel,
-                    predatorShowLabel, obstacleShowLabel, iterationShowLabel, progressBar);
+                  oceanDisplay.Display(nowIteration, myOcean, oceanDataGridView, preyShowLabel,
+                   predatorShowLabel, obstacleShowLabel, iterationShowLabel, progressBar);
 
                 if (nowIteration == myOcean.NumIteration || myOcean.NumPrey == 0 || myOcean.NumPredator == 0)
                 {

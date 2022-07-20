@@ -5,6 +5,13 @@ namespace OceanWF.OceanDemonstrate
 {
     public class DisplayOcean : IOceanDisplay
     {
+        #region Variables
+
+        private char[,] lastOceanImage;
+        private char[,] newOceanImage;
+
+        #endregion
+
         #region Methods
 
         public void CountInfo(OceanLibrary.Ocean displayOcean)
@@ -56,18 +63,49 @@ namespace OceanWF.OceanDemonstrate
             }
 
         }
+        #endregion
+
+        #region PrivateMethods
 
         private void DisplayIterations(DataGridView dataGridView, OceanLibrary.Ocean displayOcean)
         {
+            lastOceanImage = new char[Constant.maxRows, Constant.maxCols];
+            newOceanImage = new char[Constant.maxRows, Constant.maxCols];
+
+            newOceanImage = GetIterationImage(newOceanImage, displayOcean);
+
             for (int rows = 0; rows < Constant.maxRows; rows++)
             {
                 for (int cols = 0; cols < Constant.maxCols; cols++)
                 {
-                    dataGridView.Rows[rows].Cells[cols].Value = displayOcean.cells[rows, cols].Image;
+
+                    if (newOceanImage[rows, cols] != lastOceanImage[rows, cols])
+                    {
+                        dataGridView.Rows[rows].Cells[cols].Value = displayOcean.cells[rows, cols].Image;
+                    }
 
                 }
             }
 
+            lastOceanImage = GetIterationImage(lastOceanImage, displayOcean);
+        }
+
+        private char[,] GetIterationImage(char[,] iterationImage, OceanLibrary.Ocean displayOcean)
+        {
+            for (int i = 0; i < Constant.maxRows; i++)
+            {
+                for (int j = 0; j < Constant.maxCols; j++)
+                {
+
+                    if (j < Constant.maxCols)
+                    {
+                        iterationImage[i, j] = displayOcean.cells[i, j].Image;
+                    }
+
+                }
+            }
+
+            return iterationImage;
         }
         #endregion
     }
