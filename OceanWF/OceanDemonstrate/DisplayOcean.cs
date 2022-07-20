@@ -1,16 +1,11 @@
 ﻿using OceanLibrary;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace OceanWF.OceanDemonstrate
 {
     public class DisplayOcean : IOceanDisplay
     {
-        #region Variables
-
-        private char[,] lastOceanImage;
-        private char[,] newOceanImage;
-
-        #endregion
 
         #region Methods
 
@@ -69,44 +64,35 @@ namespace OceanWF.OceanDemonstrate
 
         private void DisplayIterations(DataGridView dataGridView, OceanLibrary.Ocean displayOcean)
         {
-            lastOceanImage = new char[Constant.maxRows, Constant.maxCols];
-            newOceanImage = new char[Constant.maxRows, Constant.maxCols];
-
-            newOceanImage = GetIterationImage(newOceanImage, displayOcean);
-
             for (int rows = 0; rows < Constant.maxRows; rows++)
             {
                 for (int cols = 0; cols < Constant.maxCols; cols++)
                 {
 
-                    if (newOceanImage[rows, cols] != lastOceanImage[rows, cols])
+                    if (displayOcean.cells[rows, cols].Image == Constant.defaultCellChar)
                     {
-                        dataGridView.Rows[rows].Cells[cols].Value = displayOcean.cells[rows, cols].Image;
+                        dataGridView.Rows[rows].Cells[cols].Value = null;
+                    }
+
+                    if (displayOcean.cells[rows, cols].Image == Constant.defaultPredatorImage)
+                    {
+                        dataGridView.Rows[rows].Cells[cols].Value = Ocean._predator;
+                    }
+
+                    if (displayOcean.cells[rows, cols].Image == Constant.defaultPreyImage)
+                    {
+                        dataGridView.Rows[rows].Cells[cols].Value = Ocean._prey;
+                    }
+
+                    if (displayOcean.cells[rows, cols].Image == Constant.defaultObstacleImage)
+                    {
+                        dataGridView.Rows[rows].Cells[cols].Value = Ocean._obstacle;
                     }
 
                 }
             }
-
-            lastOceanImage = GetIterationImage(lastOceanImage, displayOcean);
         }
 
-        private char[,] GetIterationImage(char[,] iterationImage, OceanLibrary.Ocean displayOcean)
-        {
-            for (int i = 0; i < Constant.maxRows; i++)
-            {
-                for (int j = 0; j < Constant.maxCols; j++)
-                {
-
-                    if (j < Constant.maxCols)
-                    {
-                        iterationImage[i, j] = displayOcean.cells[i, j].Image;
-                    }
-
-                }
-            }
-
-            return iterationImage;
-        }
         #endregion
     }
 }

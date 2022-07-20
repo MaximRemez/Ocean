@@ -122,5 +122,14 @@
       <Name>OceanLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pixelPredator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pixelPrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pixelObstacle.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

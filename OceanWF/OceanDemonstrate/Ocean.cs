@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 using OceanLibrary;
 using OceanLibrary.OceanException;
@@ -8,8 +9,10 @@ namespace OceanWF.OceanDemonstrate
 {
     public partial class Ocean : Form
     {
-  
         #region Variables
+        public static Bitmap _predator = new Bitmap(Properties.Resources.pixelPredator);
+        public static Bitmap _prey = new Bitmap(Properties.Resources.pixelPrey);
+        public static Bitmap _obstacle = new Bitmap(Properties.Resources.pixelObstacle);
 
         readonly OceanLibrary.Ocean myOcean = new OceanLibrary.Ocean();
         readonly IOceanDisplay oceanDisplay = new DisplayOcean();
@@ -25,16 +28,25 @@ namespace OceanWF.OceanDemonstrate
       
         public Ocean()
         {
-            InitializeComponent();        
+            InitializeComponent();
+            DoubleBuffered(true);
+        }
+
+        private new void DoubleBuffered(bool enabled)
+        {
+            typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.SetProperty
+            | BindingFlags.Instance | BindingFlags.NonPublic, null,
+            oceanDataGridView, new object[] { enabled });
         }
         #endregion
-        
+
         #region Events
 
         private void Ocean_Load(object sender, EventArgs e)
-        {
+        {     
             OceanDataInitialze();
-            OceanModelInitialize();   
+            GenerateModel();
+            OceanModelInitialize();        
         }
 
         private void Ocean_FormClosing(object sender, FormClosingEventArgs e)
@@ -54,11 +66,6 @@ namespace OceanWF.OceanDemonstrate
         private void OceanDataInitialze()
         {
             CorrectData();
-
-            oceanDataGridView.DefaultCellStyle.ForeColor = Color.FromArgb(255, 255, 192);
-
-            oceanDataGridView.ColumnCount = Constant.maxCols;
-            oceanDataGridView.RowCount = Constant.maxRows;
 
             preyShowLabel.Text = DataBank.NumPrey.ToString();
             predatorShowLabel.Text = DataBank.NumPredator.ToString();
@@ -113,6 +120,25 @@ namespace OceanWF.OceanDemonstrate
             }
         }
 
+        private void GenerateModel()
+        {
+            for (int cols = 0; cols < Constant.maxCols; cols++)
+            {
+                DataGridViewImageColumn imageCol = new DataGridViewImageColumn();
+                imageCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+                imageCol.DefaultCellStyle.NullValue = null;
+
+                oceanDataGridView.Columns.Add(imageCol);
+                oceanDataGridView.Columns[cols].Width = 17;
+            }
+
+            for (int rows = 0; rows < Constant.maxRows; rows++)
+            {
+                oceanDataGridView.Rows.Add();
+                oceanDataGridView.Rows[rows].Height = 17;
+            }
+        }
+
         private void OceanModelInitialize()
         {
             myOcean.Initialize(DataBank.NumObstacle, DataBank.NumPrey, DataBank.NumPredator, DataBank.NumIteration);
@@ -121,7 +147,27 @@ namespace OceanWF.OceanDemonstrate
             {
                 for (int cols = 0; cols < Constant.maxCols; cols++)
                 {
-                    oceanDataGridView.Rows[rows].Cells[cols].Value = myOcean.cells[rows, cols].Image;
+
+                    if (myOcean.cells[rows, cols].Image == Constant.defaultPreyImage)
+                    {
+                        oceanDataGridView.Rows[rows].Cells[cols].Value = _prey;
+                    }
+                    
+                    if(myOcean.cells[rows, cols].Image == Constant.defaultPredatorImage)
+                    {
+                        oceanDataGridView.Rows[rows].Cells[cols].Value = _predator;
+                    }
+
+                    if (myOcean.cells[rows, cols].Image == Constant.defaultObstacleImage)
+                    {
+                        oceanDataGridView.Rows[rows].Cells[cols].Value = _obstacle;
+                    }
+
+                    if (myOcean.cells[rows, cols].Image == Constant.defaultCellChar)
+                    {
+                        oceanDataGridView.Rows[rows].Cells[cols].Value = null;
+                    }
+
                 }
             }
 
