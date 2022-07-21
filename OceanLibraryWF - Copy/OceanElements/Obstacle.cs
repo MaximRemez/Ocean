@@ -7,7 +7,7 @@
         public Obstacle(Coordinate anOffset, IOceanCells ocean) : base(anOffset, ocean)
         {
             Offset = anOffset;
-            MyOcean = ocean;
+            _myOcean = ocean;
 
             Image = Constant.defaultObstacleImage;
         }

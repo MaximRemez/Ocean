@@ -4,20 +4,20 @@
     {
         #region Variables
 
-        private uint lastNumOfIteration;
+        private uint _lastNumOfIteration;
 
-        private int neededTimeToFeed = Constant.defaultTimeToFeed;
-        private int timeToFeed = Constant.defaultTimeToFeed;
+        private int _neededTimeToFeed = Constant.defaultTimeToFeed;
+        private int _timeToFeed = Constant.defaultTimeToFeed;
 
         public int TimeToFeed
         {
             get
             {
-                return timeToFeed;
+                return _timeToFeed;
             }
             set
             {
-                timeToFeed = value;
+                _timeToFeed = value;
             }
         }
         #endregion
@@ -26,8 +26,8 @@
 
         public Predator(Coordinate anOffset, IOceanCells ocean, int timeToBreed, int timeToDeath) : base(anOffset, ocean, timeToBreed)
         {
-            neededTimeToFeed = timeToDeath;
-            TimeToFeed = neededTimeToFeed;
+            _neededTimeToFeed = timeToDeath;
+            TimeToFeed = _neededTimeToFeed;
 
             Image = Constant.defaultPredatorImage;
         }
@@ -37,22 +37,22 @@
 
         public override void Process(IOceanCells ocean)
         {
-            if (WasProcessed == false)
+            if (wasProcessed == false)
             {
 
-                if (MyOcean.NowIteration != lastNumOfIteration)
+                if (_myOcean.NowIteration != _lastNumOfIteration)
                 {
                     TimeToFeed--;
 
-                    lastNumOfIteration = MyOcean.NowIteration;
+                    _lastNumOfIteration = _myOcean.NowIteration;
                 }
 
                 Coordinate toCoord;
-                toCoord = MyOcean.GetNeighborCell(Constant.defaultPreyImage, Offset);
+                toCoord = _myOcean.GetNeighborCell(Constant.defaultPreyImage, Offset);
 
                 if (TimeToFeed <= 0)
                 {
-                    MyOcean.AssignCellAt(Offset, new Cell(Offset, MyOcean));
+                    _myOcean.AssignCellAt(Offset, new Cell(Offset, _myOcean));
                 }
 
                 else
@@ -62,23 +62,23 @@
                     {
                         MoveFrom(Offset, toCoord);
 
-                        TimeToFeed = neededTimeToFeed;
+                        TimeToFeed = _neededTimeToFeed;
                     }
 
                     else
                     {
-                        base.Process(MyOcean);
+                        base.Process(_myOcean);
                     }
 
                 }
 
-                WasProcessed = true;
+                wasProcessed = true;
             }
         }
 
         public override Cell Reproduce(Coordinate anOffset, IOceanCells ocean)
         {
-            return new Predator(anOffset, MyOcean, neededTimeToReproduce, neededTimeToFeed);
+            return new Predator(anOffset, _myOcean, _neededTimeToReproduce, _neededTimeToFeed);
         }
         #endregion
 

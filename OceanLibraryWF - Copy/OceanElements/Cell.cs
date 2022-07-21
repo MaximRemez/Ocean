@@ -4,17 +4,17 @@
     {
         #region Variables
 
-        protected IOceanCells MyOcean;
+        protected IOceanCells _myOcean;
 
         public Coordinate Offset { get; protected set; }
 
-        public bool WasProcessed = false;
+        public bool wasProcessed = false;
 
-        private char image = Constant.defaultCellChar;
+        private char _image = Constant.defaultCellChar;
         public char Image
         {
-            get { return image; }
-            set { image = value; }
+            get { return _image; }
+            set { _image = value; }
         }
 
         #endregion
@@ -24,7 +24,7 @@
         public Cell(Coordinate anOffset, IOceanCells ocean)
         {
             Offset = anOffset;
-            MyOcean = ocean;
+            _myOcean = ocean;
         }
         #endregion
 

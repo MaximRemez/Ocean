@@ -8,13 +8,13 @@
         readonly CardinalDirections cardinalDirections = new CardinalDirections();
         readonly Randomizer randomizer = new Randomizer();
 
-        private uint numIteration;
-        private uint numObstacle = Constant.defaultNumObstacle;
-        private uint numPrey = Constant.defaultNumPrey;
-        private uint numPredator = Constant.defaultNumPredator;
-        private int numRows = Constant.maxRows;
-        private int numCols = Constant.maxCols;
-        private uint nowIteration = 0;
+        private uint _numIteration;
+        private uint _numObstacle = Constant.defaultNumObstacle;
+        private uint _numPrey = Constant.defaultNumPrey;
+        private uint _numPredator = Constant.defaultNumPredator;
+        private int _numRows = Constant.maxRows;
+        private int _numCols = Constant.maxCols;
+        private uint _nowIteration = 0;
 
         public Cell[,] cells;
         #endregion
@@ -23,38 +23,38 @@
 
         public uint NumIteration
         {
-            get { return numIteration; }
-            set { numIteration = value; }
+            get { return _numIteration; }
+            set { _numIteration = value; }
         }
         public uint NumObstacle
         {
-            get { return numObstacle; }
-            set { numObstacle = value; }
+            get { return _numObstacle; }
+            set { _numObstacle = value; }
         }
         public uint NumPrey
         {
-            get { return numPrey; }
-            set { numPrey = value; }
+            get { return _numPrey; }
+            set { _numPrey = value; }
         }
         public uint NumPredator
         {
-            get { return numPredator; }
-            set { numPredator = value; }
+            get { return _numPredator; }
+            set { _numPredator = value; }
         }
         public int NumRows
         {
-            get { return numRows; }
-            set { numRows = value; }
+            get { return _numRows; }
+            set { _numRows = value; }
         }
         public int NumCols
         {
-            get { return numCols; }
-            set { numCols = value; }
+            get { return _numCols; }
+            set { _numCols = value; }
         }
         public uint NowIteration
         {
-            get { return nowIteration; }
-            set { nowIteration = value; }
+            get { return _nowIteration; }
+            set { _nowIteration = value; }
         }
 
         #endregion
@@ -63,8 +63,8 @@
 
         public void Initialize(uint userObstacle, uint userPrey, uint userPredator, uint userIteration)
         {
-            numRows = Constant.maxRows;
-            numCols = Constant.maxCols;
+            _numRows = Constant.maxRows;
+            _numCols = Constant.maxCols;
             cells = new Cell[NumRows, NumCols];
 
             InitCells(userObstacle, userPrey, userPredator, userIteration);
@@ -72,7 +72,7 @@
 
         public void Run()
         {
-            nowIteration++;
+            _nowIteration++;
 
             for (int row = 0; row < NumRows; row++)
             {
@@ -86,7 +86,7 @@
             {
                 for (int column = 0; column < NumCols; column++)
                 {
-                    cells[row, column].WasProcessed = false;
+                    cells[row, column].wasProcessed = false;
                 }
             }
 

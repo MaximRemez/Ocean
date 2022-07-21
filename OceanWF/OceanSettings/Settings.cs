@@ -9,9 +9,9 @@ namespace OceanWF.OceanSettings
     {
         #region Variables
 
-        uint numberSumElements = 0;
-        uint numberIteration = 0;
-        uint fieldSize = Constant.maxCols * Constant.maxRows;
+        private uint _numberSumElements = 0;
+        private uint _numberIteration = 0;
+        private readonly uint _fieldSize = Constant.maxCols * Constant.maxRows;
 
         OutputException outputMessage = new OutputException();
 
@@ -128,10 +128,10 @@ namespace OceanWF.OceanSettings
                     DataBank.NumIteration = UInt32.Parse(iterationSettingsTextBox.Text);
                 }
 
-                numberSumElements = DataBank.NumPrey + DataBank.NumPredator + DataBank.NumObstacle;
-                numberIteration = DataBank.NumIteration;
+                _numberSumElements = DataBank.NumPrey + DataBank.NumPredator + DataBank.NumObstacle;
+                _numberIteration = DataBank.NumIteration;
 
-                if (numberSumElements > fieldSize)
+                if (_numberSumElements > _fieldSize)
                 {
                     ClearSettings();
                     throw new InvalidValueElementsException();              
@@ -163,7 +163,7 @@ namespace OceanWF.OceanSettings
         {
             DataRecording();
 
-            if (numberSumElements <= fieldSize && numberIteration <= Constant.maxIteration)
+            if (_numberSumElements <= _fieldSize && _numberIteration <= Constant.maxIteration)
             {
                 Close();
             }          

@@ -8,15 +8,58 @@ namespace OceanView
     {
         #region Variables
 
-        private uint iterationRows = Constant.maxRows + 3;
-        private uint iterationCols = Constant.maxCols + 4;
+        private readonly uint _iterationRows = Constant.maxRows + 3;
+        private readonly uint _iterationCols = Constant.maxCols + 4;
 
-        private char[,] lastOceanImage;
-        private char[,] newOceanImage;
-        private string oceanStats;
+        private char[,] _lastOceanImage;
+        private char[,] _newOceanImage;
+        private string _oceanStats;
+
+        private uint _userNumObstacles;
+        private uint _userNumPrey;
+        private uint _userNumPredator;
+        private uint _userNumIteration;
+
+        private bool _isConverted;
+        readonly OutputException outputMessage = new OutputException();
         #endregion
 
-        #region Methods
+        #region Properties
+
+        public uint UserNumObstacles
+        {
+            get { return _userNumObstacles; }
+            set { _userNumObstacles = value; }
+        }
+
+        public uint UserNumPrey
+        {
+            get { return _userNumPrey; }
+            set { _userNumPrey = value; }
+        }
+
+        public uint UserNumPredator
+        {
+            get { return _userNumPredator; }
+            set { _userNumPredator = value; }
+        }
+
+        public uint UserNumIteration
+        {
+            get { return _userNumIteration; }
+            set { _userNumIteration = value; }
+        }
+        #endregion
+
+        #region Constructor
+
+        public DisplayOcean()
+        {
+            outputMessage.RegisterException(ShowExceptionMessage);
+        }
+        #endregion
+
+        #region DisplayMethods
 
         public void CountInfo(Ocean displayOcean)
         {
@@ -53,36 +96,36 @@ namespace OceanView
 
         public void Display(int iteration, Ocean displayOcean)
         {
-            lastOceanImage = new char[iterationRows, iterationCols];
-            newOceanImage = new char[iterationRows, iterationCols];
+            _lastOceanImage = new char[_iterationRows, _iterationCols];
+            _newOceanImage = new char[_iterationRows, _iterationCols];
 
-            oceanStats = String.Format("Iteration: {0}/{1}     Obstacle: {2}     Prey: {3}      Predator: {4}",
+            _oceanStats = String.Format("Iteration: {0}/{1}     Obstacle: {2}     Prey: {3}      Predator: {4}",
                 iteration, displayOcean.NumIteration, displayOcean.NumObstacle, displayOcean.NumPrey, displayOcean.NumPredator);
 
-            newOceanImage = GetIterationImage(newOceanImage, oceanStats, displayOcean);
+            _newOceanImage = GetIterationImage(_newOceanImage, _oceanStats, displayOcean);
 
-            for (int i = 0; i < iterationRows; i++)
+            for (int i = 0; i < _iterationRows; i++)
             {
-                for (int j = 0; j < iterationCols; j++)
+                for (int j = 0; j < _iterationCols; j++)
                 {
 
-                    if (newOceanImage[i, j] != lastOceanImage[i, j])
+                    if (_newOceanImage[i, j] != _lastOceanImage[i, j])
                     {
                         Console.SetCursorPosition(j, i);
-                        Console.Write(newOceanImage[i, j]);
+                        Console.Write(_newOceanImage[i, j]);
                     }
 
                 }
             }
 
-            lastOceanImage = GetIterationImage(lastOceanImage, oceanStats, displayOcean);
+            _lastOceanImage = GetIterationImage(_lastOceanImage, _oceanStats, displayOcean);
         }
 
         private char[,] GetIterationImage(char[,] iterationImage, string stats, Ocean displayOcean)
         {
-            for (int i = 0; i < iterationRows; i++)
+            for (int i = 0; i < _iterationRows; i++)
             {
-                for (int j = 0; j < iterationCols; j++)
+                for (int j = 0; j < _iterationCols; j++)
                 {
 
                     if (i == 0)
@@ -97,7 +140,7 @@ namespace OceanView
                         }
                     }
 
-                    else if (i == 1 || i == iterationRows - 1)
+                    else if (i == 1 || i == _iterationRows - 1)
                     {
                         if (j < Constant.maxCols)
                         {
@@ -126,97 +169,54 @@ namespace OceanView
 
             return iterationImage;
         }
-        #endregion
+        #endregion         
 
-        #region Variables
-
-        private uint userNumObstacles;
-        private uint userNumPrey;
-        private uint userNumPredator;
-        private uint userNumIteration;
-
-        private bool IsConverted;
-
-        OutputException outputMessage = new OutputException();
-        #endregion
-
-        #region Properties
-
-        public uint UserNumObstacles
-        {
-            get { return userNumObstacles; }
-            set { userNumObstacles = value; }
-        }
-
-        public uint UserNumPrey
-        {
-            get { return userNumPrey; }
-            set { userNumPrey = value; }
-        }
-
-        public uint UserNumPredator
-        {
-            get { return userNumPredator; }
-            set { userNumPredator = value; }
-        }
-
-        public uint UserNumIteration
-        {
-            get { return userNumIteration; }
-            set { userNumIteration = value; }
-        }
-        #endregion
-
-        public DisplayOcean()
-        {
-            outputMessage.RegisterException(ShowExceptionMessage);
-        }
-        #region Methods
+        #region UIMethods
 
         public void SetValue()
         {
             try
             {
                 Console.Write("Enter the number of obstacles (default is 75): ");
-                IsConverted = UInt32.TryParse(Console.ReadLine(), out userNumObstacles);
-                while (!IsConverted)
+                _isConverted = UInt32.TryParse(Console.ReadLine(), out _userNumObstacles);
+                while (!_isConverted)
                 {
                     Console.Write("Enter the correct number of obstacles: ");
-                    IsConverted = UInt32.TryParse(Console.ReadLine(), out userNumObstacles);
+                    _isConverted = UInt32.TryParse(Console.ReadLine(), out _userNumObstacles);
                 }
 
                 Console.Write("Enter the number of prey (default is 150): ");
-                IsConverted = UInt32.TryParse(Console.ReadLine(), out userNumPrey);
-                while (!IsConverted)
+                _isConverted = UInt32.TryParse(Console.ReadLine(), out _userNumPrey);
+                while (!_isConverted)
                 {
                     Console.Write("Enter the correct number of prey: ");
-                    IsConverted = UInt32.TryParse(Console.ReadLine(), out userNumPrey);
+                    _isConverted = UInt32.TryParse(Console.ReadLine(), out _userNumPrey);
                 }
 
                 Console.Write("Enter the number of predator (default is 20): ");
-                IsConverted = UInt32.TryParse(Console.ReadLine(), out userNumPredator);
-                while (!IsConverted)
+                _isConverted = UInt32.TryParse(Console.ReadLine(), out _userNumPredator);
+                while (!_isConverted)
                 {
                     Console.Write("Enter the correct number of predator: ");
-                    IsConverted = UInt32.TryParse(Console.ReadLine(), out userNumPredator);
+                    _isConverted = UInt32.TryParse(Console.ReadLine(), out _userNumPredator);
                 }
 
                 Console.Write("Enter the number of iteration(defaul is 100): ");
-                IsConverted = UInt32.TryParse(Console.ReadLine(), out userNumIteration);
-                while (!IsConverted)
+                _isConverted = UInt32.TryParse(Console.ReadLine(), out _userNumIteration);
+                while (!_isConverted)
                 {
                     Console.Write("Enter the correct number of iteration: ");
-                    IsConverted = UInt32.TryParse(Console.ReadLine(), out userNumIteration);
+                    _isConverted = UInt32.TryParse(Console.ReadLine(), out _userNumIteration);
                 }
 
-                uint numberSumElements = userNumPredator + userNumPrey + userNumObstacles;
+                uint numberSumElements = _userNumPredator + _userNumPrey + _userNumObstacles;
                 uint fieldSize = Constant.maxCols * Constant.maxRows;
 
                 if (numberSumElements > fieldSize)
                 {
                     throw new InvalidValueElementsException();
                 }
-                if (userNumIteration > Constant.maxIteration)
+                if (_userNumIteration > Constant.maxIteration)
                 {
                     throw new InvalidIterationValueException();
                 }

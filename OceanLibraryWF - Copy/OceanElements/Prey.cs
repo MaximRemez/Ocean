@@ -4,20 +4,20 @@
     {
         #region Variables
 
-        private uint lastNumOfIteration;
+        private uint _lastNumOfIteration;
 
-        protected int neededTimeToReproduce = Constant.defaultTimeToReproduce;
-        private int timeToReproduce = Constant.defaultTimeToReproduce;
+        protected int _neededTimeToReproduce = Constant.defaultTimeToReproduce;
+        private int _timeToReproduce = Constant.defaultTimeToReproduce;
 
         public int TimeToReproduce
         {
             get
             {
-                return timeToReproduce;
+                return _timeToReproduce;
             }
             protected set
             {
-                timeToReproduce = value;
+                _timeToReproduce = value;
             }
         }
         #endregion
@@ -27,7 +27,7 @@
         public Prey(Coordinate anOffset, IOceanCells ocean, int timeToDivision) : base(anOffset, ocean)
         {
             Offset = anOffset;
-            MyOcean = ocean;
+            _myOcean = ocean;
             TimeToReproduce = timeToDivision;
             Image = Constant.defaultPreyImage;
         }
@@ -37,10 +37,10 @@
 
         public override void Process(IOceanCells ocean)
         {
-            if (WasProcessed == false)
+            if (wasProcessed == false)
             {
-                MoveFrom(Offset, MyOcean.GetNeighborCell(Constant.defaultCellChar, Offset));
-                WasProcessed = true;
+                MoveFrom(Offset, _myOcean.GetNeighborCell(Constant.defaultCellChar, Offset));
+                wasProcessed = true;
             }
         }
 
@@ -54,28 +54,28 @@
 
         protected virtual void MoveFrom(Coordinate from, Coordinate to)
         {
-            if (MyOcean.NowIteration != lastNumOfIteration)
+            if (_myOcean.NowIteration != _lastNumOfIteration)
             {
                 TimeToReproduce--;
 
-                lastNumOfIteration = MyOcean.NowIteration;
+                _lastNumOfIteration = _myOcean.NowIteration;
             }
 
             if (to != from)
             {
                 Offset = to;
-                MyOcean.AssignCellAt(to, this);
+                _myOcean.AssignCellAt(to, this);
 
                 if (TimeToReproduce <= 0)
                 {
-                    MyOcean.AssignCellAt(from, Reproduce(from, MyOcean));
+                    _myOcean.AssignCellAt(from, Reproduce(from, _myOcean));
 
                     TimeToReproduce = Constant.defaultTimeToReproduce;
                 }
 
                 else
                 {
-                    MyOcean.AssignCellAt(from, new Cell(from, MyOcean));
+                    _myOcean.AssignCellAt(from, new Cell(from, _myOcean));
                 }
 
             }
