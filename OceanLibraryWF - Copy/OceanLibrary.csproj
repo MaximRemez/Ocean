@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="OceanException\InvalidIterationValueException.cs" />
-    <Compile Include="OceanException\InvalidValueElementsException.cs" />
+    <Compile Include="OceanException\InvalidNumberElementException.cs" />
+    <Compile Include="OceanException\InvalidSizeException.cs" />
+    <Compile Include="OceanException\InvalidSumElementsException.cs" />
     <Compile Include="OceanElements\AddElements.cs" />
     <Compile Include="OceanElements\CardinalDirections.cs" />
     <Compile Include="OceanElements\Cell.cs" />

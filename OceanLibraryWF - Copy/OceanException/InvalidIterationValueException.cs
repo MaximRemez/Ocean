@@ -4,7 +4,7 @@ namespace OceanLibrary.OceanException
 {
     public class InvalidIterationValueException : Exception
     {
-        static readonly string excMessage = "The number of iteration is greater than 1000!";
+        static readonly string excMessage = "The number of iteration is out of bounds!";
 
         public InvalidIterationValueException() : base(excMessage)
         {

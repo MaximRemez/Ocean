@@ -23,7 +23,7 @@ namespace OceanWF.OceanDemonstrate
         #endregion
 
         #region Constructor
-      
+
         public Ocean()
         {
             InitializeComponent();
@@ -41,10 +41,10 @@ namespace OceanWF.OceanDemonstrate
         #region Events
 
         private void Ocean_Load(object sender, EventArgs e)
-        {     
+        {
             OceanDataInitialze();
             GenerateModel();
-            OceanModelInitialize();        
+            OceanModelInitialize();
         }
 
         private void Ocean_FormClosing(object sender, FormClosingEventArgs e)
@@ -73,7 +73,7 @@ namespace OceanWF.OceanDemonstrate
             iterationShowLabel.Text = 0.ToString();
 
             progressBar.Maximum = (int)DataBank.NumIteration;
-            maxValueLabel.Text = DataBank.NumIteration.ToString();          
+            maxValueLabel.Text = DataBank.NumIteration.ToString();
         }
 
         private void CorrectData()
@@ -126,8 +126,8 @@ namespace OceanWF.OceanDemonstrate
                     {
                         oceanDataGridView.Rows[rows].Cells[cols].Value = _prey;
                     }
-                    
-                    if(myOcean.cells[rows, cols].Image == Constant.defaultPredatorImage)
+
+                    if (myOcean.cells[rows, cols].Image == Constant.defaultPredatorImage)
                     {
                         oceanDataGridView.Rows[rows].Cells[cols].Value = _predator;
                     }
@@ -155,8 +155,8 @@ namespace OceanWF.OceanDemonstrate
                 myOcean.Run();
 
                 oceanDisplay.CountInfo(myOcean);
-                  oceanDisplay.Display(nowIteration, myOcean, oceanDataGridView, preyShowLabel,
-                   predatorShowLabel, obstacleShowLabel, iterationShowLabel, progressBar);
+                oceanDisplay.Display(nowIteration, myOcean, oceanDataGridView, preyShowLabel,
+                 predatorShowLabel, obstacleShowLabel, iterationShowLabel, progressBar);
 
                 if (nowIteration == myOcean.NumIteration || myOcean.NumPrey == 0 || myOcean.NumPredator == 0)
                 {
@@ -198,16 +198,16 @@ namespace OceanWF.OceanDemonstrate
                 iterationTimer.Start();
 
                 changeButton.Text = "Stop";
-                changeButton.ForeColor = Color.Red;             
+                changeButton.ForeColor = Color.Red;
             }
 
             else
             {
                 iterationTimer.Stop();
-                
+
                 changeButton.Text = "Start";
-                changeButton.ForeColor = Color.FromArgb(255, 255, 192);             
-            }       
+                changeButton.ForeColor = Color.FromArgb(255, 255, 192);
+            }
 
         }
         #endregion

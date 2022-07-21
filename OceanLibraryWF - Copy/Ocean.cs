@@ -1,4 +1,8 @@
-﻿namespace OceanLibrary
+﻿using OceanLibrary.OceanException;
+using System;
+using System.Windows.Forms;
+
+namespace OceanLibrary
 {
     public class Ocean : IOceanCells
     {
@@ -7,6 +11,7 @@
         readonly AddElements addElements = new AddElements();
         readonly CardinalDirections cardinalDirections = new CardinalDirections();
         readonly Randomizer randomizer = new Randomizer();
+        readonly OutputException outputMessage = new OutputException();
 
         private uint _numIteration;
         private uint _numObstacle = Constant.defaultNumObstacle;
@@ -16,6 +21,8 @@
         private int _numCols = Constant.maxCols;
         private uint _nowIteration = 0;
 
+        private int _size = Constant.maxCols * Constant.maxRows;
+
         public Cell[,] cells;
         #endregion
 
@@ -24,47 +31,197 @@
         public uint NumIteration
         {
             get { return _numIteration; }
-            set { _numIteration = value; }
+            set 
+            {
+                try
+                {
+                    if (value > Constant.maxIteration || value < 0)
+                    {
+                        throw new InvalidIterationValueException();
+                    }
+                    else
+                    {
+                        _numIteration = value;
+                    }
+                }
+                catch (InvalidIterationValueException iterationException)
+                {
+                    outputMessage.ShowOnScreen(iterationException.Message);
+                    Environment.Exit(0);
+                }
+    
+            }
         }
+
         public uint NumObstacle
         {
             get { return _numObstacle; }
-            set { _numObstacle = value; }
+            set
+            {
+                try
+                {
+                    if (value > _size || value < 0)
+                    {
+                        throw new InvalidNumberElementException();
+                    }
+                    else
+                    {
+                        _numObstacle = value;
+                    }
+                }
+                catch (InvalidNumberElementException numException)
+                {
+                    outputMessage.ShowOnScreen(numException.Message);
+                    Environment.Exit(0);
+                }
+     
+            }
         }
+
         public uint NumPrey
         {
             get { return _numPrey; }
-            set { _numPrey = value; }
+            set
+            {
+                try
+                {
+                    if (value > _size || value < 0)
+                    {
+                        throw new InvalidNumberElementException();
+                    }
+                    else
+                    {
+                        _numPrey = value;
+                    }
+                }
+                catch (InvalidNumberElementException numException)
+                {
+                    outputMessage.ShowOnScreen(numException.Message);
+                    Environment.Exit(0);
+                }
+
+            }
         }
+
         public uint NumPredator
         {
             get { return _numPredator; }
-            set { _numPredator = value; }
+            set
+            {
+                try
+                {
+                    if (value > _size || value < 0)
+                    {
+                        throw new InvalidNumberElementException();
+                    }
+                    else
+                    {
+                        _numPredator = value;
+                    }
+                }
+                catch(InvalidNumberElementException numException)
+                {
+                    outputMessage.ShowOnScreen(numException.Message);
+                    Environment.Exit(0);
+                }
+            }
         }
+
         public int NumRows
         {
             get { return _numRows; }
-            set { _numRows = value; }
+            set
+            {
+                try
+                {
+                    if (value > Constant.maxRows || value < 0)
+                    {
+                        throw new InvalidSizeException();
+                    }
+                    else
+                    {
+                        _numRows = value;
+                    }
+                }
+                catch (InvalidSizeException sizeException)
+                {
+                    outputMessage.ShowOnScreen(sizeException.Message);
+                    Environment.Exit(0);
+                }
+
+            }
         }
+
         public int NumCols
         {
             get { return _numCols; }
-            set { _numCols = value; }
+            set
+            {
+                try
+                {
+                    if (value > Constant.maxCols || value < 0)
+                    {
+                        throw new InvalidSizeException();
+                    }
+                    else
+                    {
+                        _numCols = value;
+                    }
+                }
+                catch (InvalidSizeException sizeException)
+                {
+                    outputMessage.ShowOnScreen(sizeException.Message);
+                    Environment.Exit(0);
+                }
+
+            }
         }
+
         public uint NowIteration
         {
             get { return _nowIteration; }
-            set { _nowIteration = value; }
+            set
+            {
+                try
+                {
+                    if (value > Constant.maxIteration || value < 0)
+                    {
+                        throw new InvalidIterationValueException();
+                    }
+                    else
+                    {
+                        _nowIteration = value;
+                    }
+                }
+                catch (InvalidIterationValueException iterationException)
+                {
+                    outputMessage.ShowOnScreen(iterationException.Message);
+                    Environment.Exit(0);
+                }
+
+            }
         }
 
+        #endregion
+
+        #region Constructor
+
+        public Ocean()
+        {
+            outputMessage.RegisterException(ShowExceptionMessage);
+        }
         #endregion
 
         #region MainMethods
 
         public void Initialize(uint userObstacle, uint userPrey, uint userPredator, uint userIteration)
         {
-            _numRows = Constant.maxRows;
-            _numCols = Constant.maxCols;
+            NumRows = _numRows;
+            NumCols = _numCols;
+            NumPrey = _numPrey;
+            NumPredator = _numPredator;
+            NumObstacle = _numObstacle;
+
             cells = new Cell[NumRows, NumCols];
 
             InitCells(userObstacle, userPrey, userPredator, userIteration);
@@ -94,6 +251,11 @@
         #endregion
 
         #region Methods
+
+        private void ShowExceptionMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
 
         private void InitCells(uint userObstacle, uint userPrey, uint userPredator, uint userIteration)
         {

@@ -7,6 +7,7 @@ namespace OceanView
     class DisplayOcean : IOceanDisplay, IOceanUI
     {
         #region Variables
+        readonly OutputException outputMessage = new OutputException();
 
         private readonly uint _iterationRows = Constant.maxRows + 3;
         private readonly uint _iterationCols = Constant.maxCols + 4;
@@ -21,7 +22,6 @@ namespace OceanView
         private uint _userNumIteration;
 
         private bool _isConverted;
-        readonly OutputException outputMessage = new OutputException();
         #endregion
 
         #region Properties
@@ -214,7 +214,7 @@ namespace OceanView
 
                 if (numberSumElements > fieldSize)
                 {
-                    throw new InvalidValueElementsException();
+                    throw new InvalidSumElementsException();
                 }
                 if (_userNumIteration > Constant.maxIteration)
                 {
@@ -222,7 +222,7 @@ namespace OceanView
                 }
 
             }
-            catch (InvalidValueElementsException sumException)
+            catch (InvalidSumElementsException sumException)
             {
                 outputMessage.ShowOnScreen(sumException.Message);
                 SetValue();

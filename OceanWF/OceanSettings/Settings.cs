@@ -9,18 +9,17 @@ namespace OceanWF.OceanSettings
     {
         #region Variables
 
+        OutputException outputMessage = new OutputException();
+
         private uint _numberSumElements = 0;
         private uint _numberIteration = 0;
         private readonly uint _fieldSize = Constant.maxCols * Constant.maxRows;
-
-        OutputException outputMessage = new OutputException();
-
         #endregion
 
         #region Constructor
 
         public Settings()
-        {           
+        {
             InitializeComponent();
 
             outputMessage.RegisterException(ShowExceptionMessage);
@@ -70,8 +69,8 @@ namespace OceanWF.OceanSettings
                 }
 
                 else if (obstacleSettingsTextBox.Focused == true)
-                { 
-                    iterationSettingsTextBox.Focus(); 
+                {
+                    iterationSettingsTextBox.Focus();
                 }
 
                 else if (iterationSettingsTextBox.Focused == true)
@@ -134,23 +133,23 @@ namespace OceanWF.OceanSettings
                 if (_numberSumElements > _fieldSize)
                 {
                     ClearSettings();
-                    throw new InvalidValueElementsException();              
+                    throw new InvalidSumElementsException();
                 }
                 if (DataBank.NumIteration > Constant.maxIteration)
                 {
                     ClearSettings();
-                    throw new InvalidIterationValueException();               
+                    throw new InvalidIterationValueException();
                 }
             }
-            catch (InvalidValueElementsException sumException)
+            catch (InvalidSumElementsException sumException)
             {
-                outputMessage.ShowOnScreen(sumException.Message);                
+                outputMessage.ShowOnScreen(sumException.Message);
             }
             catch (InvalidIterationValueException iterationException)
             {
-                outputMessage.ShowOnScreen(iterationException.Message);              
+                outputMessage.ShowOnScreen(iterationException.Message);
             }
-            catch(Exception defaultException)
+            catch (Exception defaultException)
             {
                 outputMessage.ShowOnScreen(defaultException.Message);
             }
@@ -166,7 +165,7 @@ namespace OceanWF.OceanSettings
             if (_numberSumElements <= _fieldSize && _numberIteration <= Constant.maxIteration)
             {
                 Close();
-            }          
+            }
         }
 
         private void exitSettingsButton_Click(object sender, EventArgs e)

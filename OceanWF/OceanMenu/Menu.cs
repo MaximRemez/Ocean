@@ -15,9 +15,9 @@ namespace OceanWF.OceanMenu
         #endregion
 
         #region Constructor
-   
+
         public Menu()
-        {       
+        {
             InitializeComponent();
 
             ImageAnimator.Animate(BackgroundImage, OnFrameChanged);
@@ -49,9 +49,9 @@ namespace OceanWF.OceanMenu
         #region Buttons
 
         private void startMenuButton_Click(object sender, EventArgs e)
-        {        
+        {
             formOcean = new OceanDemonstrate.Ocean();
-           
+
             formOcean.Show();
         }
 
