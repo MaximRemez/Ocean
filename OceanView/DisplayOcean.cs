@@ -136,6 +136,8 @@ namespace OceanView
         private uint userNumIteration;
 
         private bool IsConverted;
+
+        OutputException outputMessage = new OutputException();
         #endregion
 
         #region Properties
@@ -165,6 +167,10 @@ namespace OceanView
         }
         #endregion
 
+        public DisplayOcean()
+        {
+            outputMessage.RegisterException(ShowExceptionMessage);
+        }
         #region Methods
 
         public void SetValue()
@@ -218,12 +224,12 @@ namespace OceanView
             }
             catch (InvalidValueElementsException sumException)
             {
-                Console.WriteLine("Error: {0}", sumException.Message);
+                outputMessage.ShowOnScreen(sumException.Message);
                 SetValue();
             }
             catch (InvalidIterationValueException iterationException)
             {
-                Console.WriteLine("Error: {0}", iterationException.Message);
+                outputMessage.ShowOnScreen(iterationException.Message);
                 SetValue();
             }
 
@@ -239,7 +245,10 @@ namespace OceanView
             }
         }
 
-        
+        private void ShowExceptionMessage(string message)
+        {
+            Console.WriteLine(message);
+        }
         #endregion
 
     }

@@ -19,7 +19,7 @@ namespace OceanWF.OceanMenu
         public Menu()
         {       
             InitializeComponent();
-          
+
             ImageAnimator.Animate(BackgroundImage, OnFrameChanged);
         }
         #endregion

@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 using OceanLibrary;
-using OceanLibrary.OceanException;
 
 namespace OceanWF.OceanDemonstrate
 {
@@ -21,7 +20,6 @@ namespace OceanWF.OceanDemonstrate
         private bool IsEnded = false;
 
         int nowIteration = 0;
-
         #endregion
 
         #region Constructor

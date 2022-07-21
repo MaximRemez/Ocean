@@ -49,6 +49,7 @@
     <Compile Include="OceanElements\Cell.cs" />
     <Compile Include="OceanElements\Constant.cs" />
     <Compile Include="OceanElements\Coordinate.cs" />
+    <Compile Include="OceanException\OutputException.cs" />
     <Compile Include="OceanInterface\IOceanCells.cs" />
     <Compile Include="OceanInterface\IOceanUI.cs" />
     <Compile Include="OceanElements\Obstacle.cs" />

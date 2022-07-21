@@ -12,6 +12,9 @@ namespace OceanWF.OceanSettings
         uint numberSumElements = 0;
         uint numberIteration = 0;
         uint fieldSize = Constant.maxCols * Constant.maxRows;
+
+        OutputException outputMessage = new OutputException();
+
         #endregion
 
         #region Constructor
@@ -19,6 +22,8 @@ namespace OceanWF.OceanSettings
         public Settings()
         {           
             InitializeComponent();
+
+            outputMessage.RegisterException(ShowExceptionMessage);
 
             preySettingsTextBox.KeyPress += new KeyPressEventHandler(InputInTextBox);
             predatorSettingsTextBox.KeyPress += new KeyPressEventHandler(InputInTextBox);
@@ -81,6 +86,11 @@ namespace OceanWF.OceanSettings
 
         #region Methods
 
+        private void ShowExceptionMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
+
         private void ClearSettings()
         {
             preySettingsTextBox.Text = null;
@@ -134,15 +144,15 @@ namespace OceanWF.OceanSettings
             }
             catch (InvalidValueElementsException sumException)
             {
-                MessageBox.Show(sumException.Message);                
+                outputMessage.ShowOnScreen(sumException.Message);                
             }
             catch (InvalidIterationValueException iterationException)
             {
-                MessageBox.Show(iterationException.Message);              
+                outputMessage.ShowOnScreen(iterationException.Message);              
             }
             catch(Exception defaultException)
             {
-                MessageBox.Show(defaultException.Message);
+                outputMessage.ShowOnScreen(defaultException.Message);
             }
         }
         #endregion
