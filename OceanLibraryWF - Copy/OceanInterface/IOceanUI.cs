@@ -4,7 +4,6 @@
     {
         void SetValue();
         void EndModeling(int iteration, Ocean endOcean);
-        int EnterCountOcean();
 
         uint UserNumObstacles { get; set; }
         uint UserNumPrey { get; set; }

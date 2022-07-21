@@ -68,9 +68,9 @@ namespace OceanWF.OceanDemonstrate
             this.oceanStatisticPanel.Controls.Add(this.obstacleOceanLabel);
             this.oceanStatisticPanel.Controls.Add(this.predatorOceanLabel);
             this.oceanStatisticPanel.Controls.Add(this.preyOceanLabel);
-            this.oceanStatisticPanel.Location = new System.Drawing.Point(55, 40);
+            this.oceanStatisticPanel.Location = new System.Drawing.Point(62, 40);
             this.oceanStatisticPanel.Name = "oceanStatisticPanel";
-            this.oceanStatisticPanel.Size = new System.Drawing.Size(1185, 118);
+            this.oceanStatisticPanel.Size = new System.Drawing.Size(1170, 118);
             this.oceanStatisticPanel.TabIndex = 1;
             // 
             // progressBar
@@ -79,7 +79,7 @@ namespace OceanWF.OceanDemonstrate
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar.Location = new System.Drawing.Point(269, 59);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(230, 26);
+            this.progressBar.Size = new System.Drawing.Size(215, 26);
             this.progressBar.Step = 1;
             this.progressBar.TabIndex = 16;
             // 
@@ -90,7 +90,7 @@ namespace OceanWF.OceanDemonstrate
             this.obstacleShowLabel.BackColor = System.Drawing.Color.Transparent;
             this.obstacleShowLabel.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.obstacleShowLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
-            this.obstacleShowLabel.Location = new System.Drawing.Point(1087, 50);
+            this.obstacleShowLabel.Location = new System.Drawing.Point(1072, 50);
             this.obstacleShowLabel.Name = "obstacleShowLabel";
             this.obstacleShowLabel.Size = new System.Drawing.Size(77, 35);
             this.obstacleShowLabel.TabIndex = 15;
@@ -103,7 +103,7 @@ namespace OceanWF.OceanDemonstrate
             this.predatorShowLabel.BackColor = System.Drawing.Color.Transparent;
             this.predatorShowLabel.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.predatorShowLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
-            this.predatorShowLabel.Location = new System.Drawing.Point(843, 50);
+            this.predatorShowLabel.Location = new System.Drawing.Point(828, 50);
             this.predatorShowLabel.Name = "predatorShowLabel";
             this.predatorShowLabel.Size = new System.Drawing.Size(77, 35);
             this.predatorShowLabel.TabIndex = 14;
@@ -116,7 +116,7 @@ namespace OceanWF.OceanDemonstrate
             this.preyShowLabel.BackColor = System.Drawing.Color.Transparent;
             this.preyShowLabel.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.preyShowLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
-            this.preyShowLabel.Location = new System.Drawing.Point(602, 50);
+            this.preyShowLabel.Location = new System.Drawing.Point(587, 50);
             this.preyShowLabel.Name = "preyShowLabel";
             this.preyShowLabel.Size = new System.Drawing.Size(77, 35);
             this.preyShowLabel.TabIndex = 13;
@@ -140,7 +140,7 @@ namespace OceanWF.OceanDemonstrate
             this.maxValueLabel.BackColor = System.Drawing.Color.Transparent;
             this.maxValueLabel.Font = new System.Drawing.Font("Berlin Sans FB", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maxValueLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
-            this.maxValueLabel.Location = new System.Drawing.Point(401, 34);
+            this.maxValueLabel.Location = new System.Drawing.Point(386, 34);
             this.maxValueLabel.Name = "maxValueLabel";
             this.maxValueLabel.Size = new System.Drawing.Size(98, 22);
             this.maxValueLabel.TabIndex = 11;
@@ -166,7 +166,7 @@ namespace OceanWF.OceanDemonstrate
             this.obstacleOceanLabel.BackColor = System.Drawing.Color.Transparent;
             this.obstacleOceanLabel.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.obstacleOceanLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
-            this.obstacleOceanLabel.Location = new System.Drawing.Point(934, 50);
+            this.obstacleOceanLabel.Location = new System.Drawing.Point(919, 50);
             this.obstacleOceanLabel.Name = "obstacleOceanLabel";
             this.obstacleOceanLabel.Size = new System.Drawing.Size(147, 35);
             this.obstacleOceanLabel.TabIndex = 4;
@@ -179,7 +179,7 @@ namespace OceanWF.OceanDemonstrate
             this.predatorOceanLabel.BackColor = System.Drawing.Color.Transparent;
             this.predatorOceanLabel.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.predatorOceanLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
-            this.predatorOceanLabel.Location = new System.Drawing.Point(685, 50);
+            this.predatorOceanLabel.Location = new System.Drawing.Point(670, 50);
             this.predatorOceanLabel.Name = "predatorOceanLabel";
             this.predatorOceanLabel.Size = new System.Drawing.Size(152, 35);
             this.predatorOceanLabel.TabIndex = 3;
@@ -192,7 +192,7 @@ namespace OceanWF.OceanDemonstrate
             this.preyOceanLabel.BackColor = System.Drawing.Color.Transparent;
             this.preyOceanLabel.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.preyOceanLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
-            this.preyOceanLabel.Location = new System.Drawing.Point(505, 50);
+            this.preyOceanLabel.Location = new System.Drawing.Point(490, 50);
             this.preyOceanLabel.Name = "preyOceanLabel";
             this.preyOceanLabel.Size = new System.Drawing.Size(93, 35);
             this.preyOceanLabel.TabIndex = 2;
@@ -212,9 +212,9 @@ namespace OceanWF.OceanDemonstrate
             this.changeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("changeButton.BackgroundImage")));
             this.changeButton.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.changeButton.Location = new System.Drawing.Point(55, 466);
+            this.changeButton.Location = new System.Drawing.Point(62, 466);
             this.changeButton.Name = "changeButton";
-            this.changeButton.Size = new System.Drawing.Size(1183, 57);
+            this.changeButton.Size = new System.Drawing.Size(1170, 57);
             this.changeButton.TabIndex = 2;
             this.changeButton.Text = "Start";
             this.changeButton.UseVisualStyleBackColor = false;

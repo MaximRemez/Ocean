@@ -29,14 +29,14 @@ namespace OceanWF.OceanDemonstrate
         public Ocean()
         {
             InitializeComponent();
-            DoubleBuffered(true);
+            DoubleBuffered();
         }
 
-        private new void DoubleBuffered(bool enabled)
+        private new void DoubleBuffered()
         {
             typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.SetProperty
             | BindingFlags.Instance | BindingFlags.NonPublic, null,
-            oceanDataGridView, new object[] { enabled });
+            oceanDataGridView, new object[] { true });
         }
         #endregion
 
@@ -67,6 +67,8 @@ namespace OceanWF.OceanDemonstrate
         {
             CorrectData();
 
+            iterationTimer.Interval = Constant.interval;
+
             preyShowLabel.Text = DataBank.NumPrey.ToString();
             predatorShowLabel.Text = DataBank.NumPredator.ToString();
             obstacleShowLabel.Text = DataBank.NumObstacle.ToString();
@@ -78,45 +80,19 @@ namespace OceanWF.OceanDemonstrate
 
         private void CorrectData()
         {
-            try
+            if (DataBank.NumIteration == 0)
             {
-                if (DataBank.NumIteration == 0)
-                {
-                    DataBank.NumIteration = Constant.defaultNumIteration;
-                }
-
-                if (DataBank.NumPrey == 0)
-                {
-                    DataBank.NumPrey = Constant.defaultNumPrey;
-                }
-
-                if (DataBank.NumPredator == 0)
-                {
-                    DataBank.NumPredator = Constant.defaultNumPredator;
-                }
-
-                uint numberSumElements = DataBank.NumPrey + DataBank.NumPredator + DataBank.NumObstacle;
-                uint fieldSize = Constant.maxCols * Constant.maxRows;
-
-                if (numberSumElements > fieldSize)
-                {
-                    throw new InvalidValueElementsException();
-                }
-                if (DataBank.NumIteration > Constant.maxIteration)
-                {
-                    throw new InvalidIterationValueException();
-                }
-
+                DataBank.NumIteration = Constant.defaultNumIteration;
             }
-            catch (InvalidValueElementsException sumException)
+
+            if (DataBank.NumPrey == 0)
             {
-                MessageBox.Show(sumException.Message);
-                Close();
+                DataBank.NumPrey = Constant.defaultNumPrey;
             }
-            catch (InvalidIterationValueException iterationException)
+
+            if (DataBank.NumPredator == 0)
             {
-                MessageBox.Show(iterationException.Message);
-                Close();
+                DataBank.NumPredator = Constant.defaultNumPredator;
             }
         }
 

@@ -1,12 +1,10 @@
 ﻿using OceanLibrary;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace OceanWF.OceanDemonstrate
 {
     public class DisplayOcean : IOceanDisplay
     {
-
         #region Methods
 
         public void CountInfo(OceanLibrary.Ocean displayOcean)
@@ -74,17 +72,17 @@ namespace OceanWF.OceanDemonstrate
                         dataGridView.Rows[rows].Cells[cols].Value = null;
                     }
 
-                    if (displayOcean.cells[rows, cols].Image == Constant.defaultPredatorImage)
+                    else if (displayOcean.cells[rows, cols].Image == Constant.defaultPredatorImage)
                     {
                         dataGridView.Rows[rows].Cells[cols].Value = Ocean._predator;
                     }
 
-                    if (displayOcean.cells[rows, cols].Image == Constant.defaultPreyImage)
+                    else if (displayOcean.cells[rows, cols].Image == Constant.defaultPreyImage)
                     {
                         dataGridView.Rows[rows].Cells[cols].Value = Ocean._prey;
                     }
 
-                    if (displayOcean.cells[rows, cols].Image == Constant.defaultObstacleImage)
+                    else
                     {
                         dataGridView.Rows[rows].Cells[cols].Value = Ocean._obstacle;
                     }

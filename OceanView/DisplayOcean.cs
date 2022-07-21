@@ -134,7 +134,6 @@ namespace OceanView
         private uint userNumPrey;
         private uint userNumPredator;
         private uint userNumIteration;
-        public int countOfOcean;
 
         private bool IsConverted;
         #endregion
@@ -240,27 +239,7 @@ namespace OceanView
             }
         }
 
-        public int EnterCountOcean()
-        {
-            Console.Write("Enter the number of ocean(1/2): ");
-            IsConverted = Int32.TryParse(Console.ReadLine(), out countOfOcean);
-            while (!IsConverted)
-            {
-                Console.Write("Enter the correct number of ocean: ");
-                IsConverted = Int32.TryParse(Console.ReadLine(), out countOfOcean);
-            }
-            if (countOfOcean > Constant.maxCountOcean)
-            {
-                countOfOcean = Constant.maxCountOcean;
-            }
-
-            if (countOfOcean <= 0)
-            {
-                countOfOcean = Constant.minCountOcean;
-            }
-
-            return countOfOcean;
-        }
+        
         #endregion
 
     }

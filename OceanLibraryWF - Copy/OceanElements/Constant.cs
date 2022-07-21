@@ -25,11 +25,10 @@
         public const int defaultTimeToReproduce = 6;
         public const int defaultTimeToFeed = 6;
 
-        public const int minCountOcean = 1;
-        public const int maxCountOcean = 2;
-
         public const int indent = 85;
         public const int indentMidOcean = 21;
         public const int downIndent = 28;
+
+        public const int interval = 1;
     }
 }

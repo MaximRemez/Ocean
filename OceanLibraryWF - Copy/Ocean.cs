@@ -97,11 +97,10 @@
 
         private void InitCells(uint userObstacle, uint userPrey, uint userPredator, uint userIteration)
         {
-
-            numObstacle = userObstacle;
-            numPrey = userPrey;
-            numPredator = userPredator;
-            numIteration = userIteration;
+            NumObstacle = userObstacle;
+            NumPrey = userPrey;
+            NumPredator = userPredator;
+            NumIteration = userIteration;
 
             addElements.AddOceanElements(this);
         }
