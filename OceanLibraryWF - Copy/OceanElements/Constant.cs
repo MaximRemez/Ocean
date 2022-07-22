@@ -18,9 +18,12 @@
         public const char defaultCellImage = ' ';
         public const char defaultObstacleImage = '#';
         public const char defaultRimuruImage = 'R';
+        public const char defaultTentacleImage = 't';
 
         public const int defaultTimeToReproduce = 6;
         public const int defaultTimeToFeed = 6;
+        public const int defaultTimeToPunch = 15;
+        public const int defaultTentacleLife = 1;
 
         public const int indent = 85;
         public const int indentMidOcean = 21;

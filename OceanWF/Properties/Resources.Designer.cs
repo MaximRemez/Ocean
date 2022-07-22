@@ -143,6 +143,16 @@ namespace OceanWF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pixelTentacle {
+            get {
+                object obj = ResourceManager.GetObject("pixelTentacle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap settingsBack {
             get {
                 object obj = ResourceManager.GetObject("settingsBack", resourceCulture);

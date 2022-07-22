@@ -51,7 +51,7 @@
             for (int i = 0; i < addMembers.NumObstacle; i++)
             {
                 empty = GetEmptyCellCoord(addMembers);
-                addMembers.cells[empty.Y, empty.X] = new Obstacle(empty, addMembers);
+                addMembers.cells[empty.Y, empty.X] = new Obstacle(empty, addMembers, Constant.defaultTimeToPunch);
             }
 
         }

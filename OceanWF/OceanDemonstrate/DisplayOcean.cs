@@ -95,9 +95,14 @@ namespace OceanWF.OceanDemonstrate
                         dataGridView.Rows[rows].Cells[cols].Value = Ocean._rimuru;
                     }
 
-                    else
+                    else if(displayOcean.cells[rows, cols].Image == Constant.defaultObstacleImage)
                     {
                         dataGridView.Rows[rows].Cells[cols].Value = Ocean._obstacle;
+                    }
+
+                    else if(displayOcean.cells[rows, cols].Image == Constant.defaultTentacleImage)
+                    {
+                        dataGridView.Rows[rows].Cells[cols].Value = Ocean._fire;
                     }
 
                 }

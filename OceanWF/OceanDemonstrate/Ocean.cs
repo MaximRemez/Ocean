@@ -13,6 +13,7 @@ namespace OceanWF.OceanDemonstrate
         public static Bitmap _prey = new Bitmap(Properties.Resources.pixelPrey);
         public static Bitmap _obstacle = new Bitmap(Properties.Resources.pixelObstacle);
         public static Bitmap _rimuru = new Bitmap(Properties.Resources.pixelRimuru);
+        public static Bitmap _fire = new Bitmap(Properties.Resources.pixelTentacle);
 
         readonly OceanLibrary.Ocean myOcean = new OceanLibrary.Ocean();
         readonly IOceanDisplay oceanDisplay = new DisplayOcean();
