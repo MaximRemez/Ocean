@@ -126,6 +126,7 @@
     <Content Include="Resources\pixelObstacle.png" />
     <Content Include="Resources\pixelPredator.png" />
     <Content Include="Resources\pixelPrey.png" />
+    <None Include="Resources\pixelRimuru.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

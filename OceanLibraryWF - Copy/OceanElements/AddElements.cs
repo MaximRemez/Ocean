@@ -10,6 +10,7 @@
             AddObstacles(addElements);
             AddPrey(addElements);
             AddPredators(addElements);
+            AddRimuru(addElements);
         }
 
         private Coordinate GetEmptyCellCoord(Ocean addMembers)
@@ -22,7 +23,7 @@
                 x = randomizer.RandNum(addMembers.NumCols);
                 y = randomizer.RandNum(addMembers.NumRows);
             }
-            while (addMembers.cells[y, x].Image != Constant.defaultCellChar);
+            while (addMembers.cells[y, x].Image != Constant.defaultCellImage);
 
             empty = addMembers.cells[y, x].Offset;
             return empty;
@@ -77,6 +78,17 @@
                 addMembers.cells[empty.Y, empty.X] = new Predator(empty, addMembers, Constant.defaultTimeToReproduce, Constant.defaultTimeToFeed);
             }
 
+        }
+
+        private void AddRimuru(Ocean addMembers)
+        {
+            Coordinate empty;
+
+            for (int i = 0; i < addMembers.NumRimuruFish; i++)
+            {
+                empty = GetEmptyCellCoord(addMembers);
+                addMembers.cells[empty.Y, empty.X] = new RimuruFish(empty, addMembers);
+            }
         }
     }
 }

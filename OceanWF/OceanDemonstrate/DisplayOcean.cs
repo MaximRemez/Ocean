@@ -12,24 +12,30 @@ namespace OceanWF.OceanDemonstrate
             int countOfObstacle = 0;
             int countOfPrey = 0;
             int countOfPredator = 0;
+            int countOfRimuruFish = 0;
 
             for (int row = 0; row < displayOcean.NumRows; row++)
             {
                 for (int column = 0; column < displayOcean.NumCols; column++)
                 {
-                    if (displayOcean.cells[row, column].Image == '#')
+                    if (displayOcean.cells[row, column].Image == Constant.defaultObstacleImage)
                     {
                         countOfObstacle++;
                     }
 
-                    if (displayOcean.cells[row, column].Image == 'f')
+                    if (displayOcean.cells[row, column].Image == Constant.defaultPreyImage)
                     {
                         countOfPrey++;
                     }
 
-                    if (displayOcean.cells[row, column].Image == 'S')
+                    if (displayOcean.cells[row, column].Image == Constant.defaultPredatorImage)
                     {
                         countOfPredator++;
+                    }
+
+                    if (displayOcean.cells[row, column].Image == Constant.defaultRimuruImage)
+                    {
+                        countOfRimuruFish++;
                     }
 
                 }
@@ -38,16 +44,18 @@ namespace OceanWF.OceanDemonstrate
             displayOcean.NumObstacle = (uint)countOfObstacle;
             displayOcean.NumPrey = (uint)countOfPrey;
             displayOcean.NumPredator = (uint)countOfPredator;
+            displayOcean.NumRimuruFish = (uint)countOfRimuruFish;
         }
 
         public void Display(int iteration, OceanLibrary.Ocean displayOcean, DataGridView dataGridView, Label prey,
-            Label predator, Label obstacle, Label allIteration, ProgressBar nowIteration)
+            Label predator, Label obstacle,Label rimuru, Label allIteration, ProgressBar nowIteration)
         {
             DisplayIterations(dataGridView, displayOcean);
 
             prey.Text = displayOcean.NumPrey.ToString();
             predator.Text = displayOcean.NumPredator.ToString();
             obstacle.Text = displayOcean.NumObstacle.ToString();
+            rimuru.Text = displayOcean.NumRimuruFish.ToString();
             allIteration.Text = iteration.ToString();
 
             if (iteration <= nowIteration.Maximum)
@@ -67,7 +75,7 @@ namespace OceanWF.OceanDemonstrate
                 for (int cols = 0; cols < Constant.maxCols; cols++)
                 {
 
-                    if (displayOcean.cells[rows, cols].Image == Constant.defaultCellChar)
+                    if (displayOcean.cells[rows, cols].Image == Constant.defaultCellImage)
                     {
                         dataGridView.Rows[rows].Cells[cols].Value = null;
                     }
@@ -80,6 +88,11 @@ namespace OceanWF.OceanDemonstrate
                     else if (displayOcean.cells[rows, cols].Image == Constant.defaultPreyImage)
                     {
                         dataGridView.Rows[rows].Cells[cols].Value = Ocean._prey;
+                    }
+
+                    else if(displayOcean.cells[rows, cols].Image == Constant.defaultRimuruImage)
+                    {
+                        dataGridView.Rows[rows].Cells[cols].Value = Ocean._rimuru;
                     }
 
                     else

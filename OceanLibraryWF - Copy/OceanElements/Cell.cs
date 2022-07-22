@@ -10,7 +10,7 @@
 
         public bool wasProcessed = false;
 
-        private char _image = Constant.defaultCellChar;
+        private char _image = Constant.defaultCellImage;
         public char Image
         {
             get { return _image; }

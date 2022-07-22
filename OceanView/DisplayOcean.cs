@@ -19,6 +19,7 @@ namespace OceanView
         private uint _userNumObstacles;
         private uint _userNumPrey;
         private uint _userNumPredator;
+        private uint _userNumRimuruFish;
         private uint _userNumIteration;
 
         private bool _isConverted;
@@ -44,6 +45,12 @@ namespace OceanView
             set { _userNumPredator = value; }
         }
 
+        public uint UserNumRimuruFish
+        {
+            get { return _userNumRimuruFish; }
+            set { _userNumRimuruFish = value; }
+        }
+
         public uint UserNumIteration
         {
             get { return _userNumIteration; }
@@ -66,24 +73,30 @@ namespace OceanView
             int countOfObstacle = 0;
             int countOfPrey = 0;
             int countOfPredator = 0;
+            int countOfRimuruFish = 0;
 
             for (int row = 0; row < displayOcean.NumRows; row++)
             {
                 for (int column = 0; column < displayOcean.NumCols; column++)
                 {
-                    if (displayOcean.cells[row, column].Image == '#')
+                    if (displayOcean.cells[row, column].Image == Constant.defaultObstacleImage)
                     {
                         countOfObstacle++;
                     }
 
-                    if (displayOcean.cells[row, column].Image == 'f')
+                    if (displayOcean.cells[row, column].Image == Constant.defaultPreyImage)
                     {
                         countOfPrey++;
                     }
 
-                    if (displayOcean.cells[row, column].Image == 'S')
+                    if (displayOcean.cells[row, column].Image == Constant.defaultPredatorImage)
                     {
                         countOfPredator++;
+                    }
+
+                    if (displayOcean.cells[row, column].Image == Constant.defaultRimuruImage)
+                    {
+                        countOfRimuruFish++;
                     }
 
                 }
@@ -92,6 +105,7 @@ namespace OceanView
             displayOcean.NumObstacle = (uint)countOfObstacle;
             displayOcean.NumPrey = (uint)countOfPrey;
             displayOcean.NumPredator = (uint)countOfPredator;
+            displayOcean.NumRimuruFish = (uint)countOfRimuruFish;
         }
 
         public void Display(int iteration, Ocean displayOcean)
@@ -99,8 +113,8 @@ namespace OceanView
             _lastOceanImage = new char[_iterationRows, _iterationCols];
             _newOceanImage = new char[_iterationRows, _iterationCols];
 
-            _oceanStats = String.Format("Iteration: {0}/{1}     Obstacle: {2}     Prey: {3}      Predator: {4}",
-                iteration, displayOcean.NumIteration, displayOcean.NumObstacle, displayOcean.NumPrey, displayOcean.NumPredator);
+            _oceanStats = String.Format("Iteration: {0}/{1}  Obstacle: {2}  Prey: {3}  Predator: {4}  Rimuru: {5}", iteration,
+                displayOcean.NumIteration, displayOcean.NumObstacle, displayOcean.NumPrey, displayOcean.NumPredator, displayOcean.NumRimuruFish);
 
             _newOceanImage = GetIterationImage(_newOceanImage, _oceanStats, displayOcean);
 
@@ -201,6 +215,14 @@ namespace OceanView
                     _isConverted = UInt32.TryParse(Console.ReadLine(), out _userNumPredator);
                 }
 
+                Console.Write("Enter the number of Rimurufish (default is 8): ");
+                _isConverted = UInt32.TryParse(Console.ReadLine(), out _userNumRimuruFish);
+                while (!_isConverted)
+                {
+                    Console.Write("Enter the correct number of Rimurufish: ");
+                    _isConverted = UInt32.TryParse(Console.ReadLine(), out _userNumRimuruFish);
+                }
+
                 Console.Write("Enter the number of iteration(defaul is 100): ");
                 _isConverted = UInt32.TryParse(Console.ReadLine(), out _userNumIteration);
                 while (!_isConverted)
@@ -209,7 +231,7 @@ namespace OceanView
                     _isConverted = UInt32.TryParse(Console.ReadLine(), out _userNumIteration);
                 }
 
-                uint numberSumElements = _userNumPredator + _userNumPrey + _userNumObstacles;
+                uint numberSumElements = _userNumPredator + _userNumPrey + _userNumObstacles + _userNumRimuruFish;
                 uint fieldSize = Constant.maxCols * Constant.maxRows;
 
                 if (numberSumElements > fieldSize)

@@ -17,6 +17,8 @@ namespace OceanLibrary
         private uint _numObstacle = Constant.defaultNumObstacle;
         private uint _numPrey = Constant.defaultNumPrey;
         private uint _numPredator = Constant.defaultNumPredator;
+        private uint _numRimuruFish = Constant.defaultNumRimuru;
+
         private int _numRows = Constant.maxRows;
         private int _numCols = Constant.maxCols;
         private uint _nowIteration = 0;
@@ -127,6 +129,30 @@ namespace OceanLibrary
             }
         }
 
+        public uint NumRimuruFish
+        {
+            get { return _numRimuruFish; }
+            set
+            {
+                try
+                {
+                    if (value > _size || value < 0)
+                    {
+                        throw new InvalidNumberElementException();
+                    }
+                    else
+                    {
+                        _numRimuruFish = value;
+                    }
+                }
+                catch (InvalidNumberElementException numException)
+                {
+                    outputMessage.ShowOnScreen(numException.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
+
         public int NumRows
         {
             get { return _numRows; }
@@ -214,17 +240,18 @@ namespace OceanLibrary
 
         #region MainMethods
 
-        public void Initialize(uint userObstacle, uint userPrey, uint userPredator, uint userIteration)
+        public void Initialize(uint userObstacle, uint userPrey, uint userPredator, uint userNumRimuru, uint userIteration)
         {
             NumRows = _numRows;
             NumCols = _numCols;
             NumPrey = _numPrey;
             NumPredator = _numPredator;
             NumObstacle = _numObstacle;
+            NumRimuruFish = _numRimuruFish;
 
             cells = new Cell[NumRows, NumCols];
 
-            InitCells(userObstacle, userPrey, userPredator, userIteration);
+            InitCells(userObstacle, userPrey, userPredator, userNumRimuru, userIteration);
         }
 
         public void Run()
@@ -257,11 +284,12 @@ namespace OceanLibrary
             MessageBox.Show(message);
         }
 
-        private void InitCells(uint userObstacle, uint userPrey, uint userPredator, uint userIteration)
+        private void InitCells(uint userObstacle, uint userPrey, uint userPredator, uint userNumRimuru, uint userIteration)
         {
             NumObstacle = userObstacle;
             NumPrey = userPrey;
             NumPredator = userPredator;
+            NumRimuruFish = userNumRimuru;
             NumIteration = userIteration;
 
             addElements.AddOceanElements(this);

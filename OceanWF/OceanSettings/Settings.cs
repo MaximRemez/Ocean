@@ -27,11 +27,13 @@ namespace OceanWF.OceanSettings
             preySettingsTextBox.KeyPress += new KeyPressEventHandler(InputInTextBox);
             predatorSettingsTextBox.KeyPress += new KeyPressEventHandler(InputInTextBox);
             obstacleSettingsTextBox.KeyPress += new KeyPressEventHandler(InputInTextBox);
+            rimuruFishSettingsTextBox.KeyPress += new KeyPressEventHandler(InputInTextBox);
             iterationSettingsTextBox.KeyPress += new KeyPressEventHandler(InputInTextBox);
 
             preySettingsTextBox.KeyDown += new KeyEventHandler(NextTextBox);
             predatorSettingsTextBox.KeyDown += new KeyEventHandler(NextTextBox);
             obstacleSettingsTextBox.KeyDown += new KeyEventHandler(NextTextBox);
+            rimuruFishSettingsTextBox.KeyDown += new KeyEventHandler(NextTextBox);
             iterationSettingsTextBox.KeyDown += new KeyEventHandler(NextTextBox);
         }
         #endregion
@@ -46,6 +48,7 @@ namespace OceanWF.OceanSettings
             predatorSettingsTextBox.MaxLength = 3;
             obstacleSettingsTextBox.MaxLength = 3;
             iterationSettingsTextBox.MaxLength = 4;
+            rimuruFishSettingsTextBox.MaxLength = 3;
 
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != BackspaceID)
             {
@@ -69,6 +72,11 @@ namespace OceanWF.OceanSettings
                 }
 
                 else if (obstacleSettingsTextBox.Focused == true)
+                {
+                    rimuruFishSettingsTextBox.Focus();
+                }
+
+                else if(rimuruFishSettingsTextBox.Focused == true)
                 {
                     iterationSettingsTextBox.Focus();
                 }
@@ -95,11 +103,13 @@ namespace OceanWF.OceanSettings
             preySettingsTextBox.Text = null;
             predatorSettingsTextBox.Text = null;
             obstacleSettingsTextBox.Text = null;
+            rimuruFishSettingsTextBox.Text = null;
             iterationSettingsTextBox.Text = null;
 
             DataBank.NumPrey = 0;
             DataBank.NumPredator = 0;
             DataBank.NumObstacle = 0;
+            DataBank.NumRimuruFish = 0;
             DataBank.NumIteration = 0;
         }
 
@@ -122,12 +132,17 @@ namespace OceanWF.OceanSettings
                     DataBank.NumObstacle = UInt32.Parse(obstacleSettingsTextBox.Text);
                 }
 
+                if (rimuruFishSettingsTextBox.Text.Length != 0)
+                {
+                    DataBank.NumRimuruFish = UInt32.Parse(rimuruFishSettingsTextBox.Text);
+                }
+
                 if (iterationSettingsTextBox.Text.Length != 0)
                 {
                     DataBank.NumIteration = UInt32.Parse(iterationSettingsTextBox.Text);
                 }
 
-                _numberSumElements = DataBank.NumPrey + DataBank.NumPredator + DataBank.NumObstacle;
+                _numberSumElements = DataBank.NumPrey + DataBank.NumPredator + DataBank.NumObstacle + DataBank.NumRimuruFish;
                 _numberIteration = DataBank.NumIteration;
 
                 if (_numberSumElements > _fieldSize)

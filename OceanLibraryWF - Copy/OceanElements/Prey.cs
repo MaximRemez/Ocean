@@ -39,7 +39,7 @@
         {
             if (wasProcessed == false)
             {
-                MoveFrom(Offset, _myOcean.GetNeighborCell(Constant.defaultCellChar, Offset));
+                MoveFrom(Offset, _myOcean.GetNeighborCell(Constant.defaultCellImage, Offset));
                 wasProcessed = true;
             }
         }

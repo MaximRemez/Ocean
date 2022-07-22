@@ -42,6 +42,7 @@ namespace OceanWF.OceanMenu
             DataBank.NumPrey = Constant.defaultNumPrey;
             DataBank.NumPredator = Constant.defaultNumPredator;
             DataBank.NumObstacle = Constant.defaultNumObstacle;
+            DataBank.NumRimuruFish = Constant.defaultNumRimuru;
             DataBank.NumIteration = Constant.defaultNumIteration;
         }
         #endregion

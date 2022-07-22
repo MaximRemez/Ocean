@@ -9,5 +9,6 @@
         uint UserNumPrey { get; set; }
         uint UserNumPredator { get; set; }
         uint UserNumIteration { get; set; }
+        uint UserNumRimuruFish { get; set; }
     }
 }

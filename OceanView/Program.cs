@@ -1,5 +1,6 @@
 ﻿using OceanLibrary;
 using System;
+using System.Threading;
 
 namespace OceanView
 {
@@ -7,7 +8,7 @@ namespace OceanView
     {
         static void Main(string[] args)
         {
-            Console.SetWindowSize(166, 30);
+            Console.SetWindowSize(100, 30);
 
             IOceanDisplay elementsDisplay = new DisplayOcean();
             IOceanUI elementsUI = new DisplayOcean();
@@ -15,7 +16,8 @@ namespace OceanView
             Ocean myOcean = new Ocean();
 
             elementsUI.SetValue();
-            myOcean.Initialize(elementsUI.UserNumObstacles, elementsUI.UserNumPrey, elementsUI.UserNumPredator, elementsUI.UserNumIteration);
+            myOcean.Initialize(elementsUI.UserNumObstacles, elementsUI.UserNumPrey,
+                    elementsUI.UserNumPredator, elementsUI.UserNumRimuruFish, elementsUI.UserNumIteration);
 
             Console.CursorVisible = false;
 
@@ -25,7 +27,8 @@ namespace OceanView
                 {
                     myOcean.Run();
                     elementsDisplay.CountInfo(myOcean);
-                    elementsDisplay.Display(i+1, myOcean);           
+                    elementsDisplay.Display(i+1, myOcean);
+                    Thread.Sleep(Constant.interval);
                 }
                 elementsUI.EndModeling(i+1, myOcean);
             }

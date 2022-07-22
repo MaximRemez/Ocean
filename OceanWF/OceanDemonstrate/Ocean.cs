@@ -12,6 +12,7 @@ namespace OceanWF.OceanDemonstrate
         public static Bitmap _predator = new Bitmap(Properties.Resources.pixelPredator);
         public static Bitmap _prey = new Bitmap(Properties.Resources.pixelPrey);
         public static Bitmap _obstacle = new Bitmap(Properties.Resources.pixelObstacle);
+        public static Bitmap _rimuru = new Bitmap(Properties.Resources.pixelRimuru);
 
         readonly OceanLibrary.Ocean myOcean = new OceanLibrary.Ocean();
         readonly IOceanDisplay oceanDisplay = new DisplayOcean();
@@ -70,6 +71,7 @@ namespace OceanWF.OceanDemonstrate
             preyShowLabel.Text = DataBank.NumPrey.ToString();
             predatorShowLabel.Text = DataBank.NumPredator.ToString();
             obstacleShowLabel.Text = DataBank.NumObstacle.ToString();
+            rimuruShowLabel.Text = DataBank.NumRimuruFish.ToString();
             iterationShowLabel.Text = 0.ToString();
 
             progressBar.Maximum = (int)DataBank.NumIteration;
@@ -115,7 +117,7 @@ namespace OceanWF.OceanDemonstrate
 
         private void OceanModelInitialize()
         {
-            myOcean.Initialize(DataBank.NumObstacle, DataBank.NumPrey, DataBank.NumPredator, DataBank.NumIteration);
+            myOcean.Initialize(DataBank.NumObstacle, DataBank.NumPrey, DataBank.NumPredator,DataBank.NumRimuruFish, DataBank.NumIteration);
 
             for (int rows = 0; rows < Constant.maxRows; rows++)
             {
@@ -137,7 +139,12 @@ namespace OceanWF.OceanDemonstrate
                         oceanDataGridView.Rows[rows].Cells[cols].Value = _obstacle;
                     }
 
-                    if (myOcean.cells[rows, cols].Image == Constant.defaultCellChar)
+                    if (myOcean.cells[rows, cols].Image == Constant.defaultRimuruImage)
+                    {
+                        oceanDataGridView.Rows[rows].Cells[cols].Value = _rimuru;
+                    }
+
+                    if (myOcean.cells[rows, cols].Image == Constant.defaultCellImage)
                     {
                         oceanDataGridView.Rows[rows].Cells[cols].Value = null;
                     }
@@ -156,7 +163,7 @@ namespace OceanWF.OceanDemonstrate
 
                 oceanDisplay.CountInfo(myOcean);
                 oceanDisplay.Display(nowIteration, myOcean, oceanDataGridView, preyShowLabel,
-                 predatorShowLabel, obstacleShowLabel, iterationShowLabel, progressBar);
+                 predatorShowLabel, obstacleShowLabel, rimuruShowLabel, iterationShowLabel, progressBar);
 
                 if (nowIteration == myOcean.NumIteration || myOcean.NumPrey == 0 || myOcean.NumPredator == 0)
                 {
@@ -175,6 +182,7 @@ namespace OceanWF.OceanDemonstrate
             DataBank.NumPrey = 0;
             DataBank.NumPredator = 0;
             DataBank.NumObstacle = 0;
+            DataBank.NumRimuruFish = 0;
             DataBank.NumIteration = 0;
 
             progressBar.Maximum = 0;

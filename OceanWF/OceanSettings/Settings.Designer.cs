@@ -41,6 +41,8 @@ namespace OceanWF.OceanSettings
             this.predatorSettingsTextBox = new System.Windows.Forms.TextBox();
             this.obstacleSettingsTextBox = new System.Windows.Forms.TextBox();
             this.iterationSettingsTextBox = new System.Windows.Forms.TextBox();
+            this.rimuruFishSettingsLabel = new System.Windows.Forms.Label();
+            this.rimuruFishSettingsTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // obstacleSettingsLabel
@@ -51,7 +53,7 @@ namespace OceanWF.OceanSettings
             this.obstacleSettingsLabel.BackColor = System.Drawing.Color.Transparent;
             this.obstacleSettingsLabel.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.obstacleSettingsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.obstacleSettingsLabel.Location = new System.Drawing.Point(32, 185);
+            this.obstacleSettingsLabel.Location = new System.Drawing.Point(56, 169);
             this.obstacleSettingsLabel.Name = "obstacleSettingsLabel";
             this.obstacleSettingsLabel.Size = new System.Drawing.Size(368, 31);
             this.obstacleSettingsLabel.TabIndex = 0;
@@ -63,7 +65,7 @@ namespace OceanWF.OceanSettings
             this.preySettingsLabel.BackColor = System.Drawing.Color.Transparent;
             this.preySettingsLabel.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.preySettingsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.preySettingsLabel.Location = new System.Drawing.Point(32, 93);
+            this.preySettingsLabel.Location = new System.Drawing.Point(56, 77);
             this.preySettingsLabel.Name = "preySettingsLabel";
             this.preySettingsLabel.Size = new System.Drawing.Size(325, 31);
             this.preySettingsLabel.TabIndex = 1;
@@ -77,7 +79,7 @@ namespace OceanWF.OceanSettings
             this.predatorSettingsLabel.BackColor = System.Drawing.Color.Transparent;
             this.predatorSettingsLabel.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.predatorSettingsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.predatorSettingsLabel.Location = new System.Drawing.Point(32, 139);
+            this.predatorSettingsLabel.Location = new System.Drawing.Point(56, 123);
             this.predatorSettingsLabel.Name = "predatorSettingsLabel";
             this.predatorSettingsLabel.Size = new System.Drawing.Size(377, 31);
             this.predatorSettingsLabel.TabIndex = 2;
@@ -91,7 +93,7 @@ namespace OceanWF.OceanSettings
             this.iterationSettingsLabel.BackColor = System.Drawing.Color.Transparent;
             this.iterationSettingsLabel.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iterationSettingsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.iterationSettingsLabel.Location = new System.Drawing.Point(32, 231);
+            this.iterationSettingsLabel.Location = new System.Drawing.Point(56, 261);
             this.iterationSettingsLabel.Name = "iterationSettingsLabel";
             this.iterationSettingsLabel.Size = new System.Drawing.Size(373, 31);
             this.iterationSettingsLabel.TabIndex = 3;
@@ -104,7 +106,7 @@ namespace OceanWF.OceanSettings
             this.exitSettingsButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.exitSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitSettingsButton.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitSettingsButton.Location = new System.Drawing.Point(357, 301);
+            this.exitSettingsButton.Location = new System.Drawing.Point(358, 328);
             this.exitSettingsButton.Name = "exitSettingsButton";
             this.exitSettingsButton.Size = new System.Drawing.Size(130, 75);
             this.exitSettingsButton.TabIndex = 4;
@@ -118,7 +120,7 @@ namespace OceanWF.OceanSettings
             this.okSettingsButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.okSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.okSettingsButton.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.okSettingsButton.Location = new System.Drawing.Point(147, 301);
+            this.okSettingsButton.Location = new System.Drawing.Point(148, 328);
             this.okSettingsButton.Name = "okSettingsButton";
             this.okSettingsButton.Size = new System.Drawing.Size(130, 75);
             this.okSettingsButton.TabIndex = 5;
@@ -133,7 +135,7 @@ namespace OceanWF.OceanSettings
             this.titleSettingsPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.titleSettingsPictureBox.Font = new System.Drawing.Font("Berlin Sans FB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleSettingsPictureBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.titleSettingsPictureBox.Location = new System.Drawing.Point(156, 18);
+            this.titleSettingsPictureBox.Location = new System.Drawing.Point(156, 9);
             this.titleSettingsPictureBox.Name = "titleSettingsPictureBox";
             this.titleSettingsPictureBox.Size = new System.Drawing.Size(308, 54);
             this.titleSettingsPictureBox.TabIndex = 6;
@@ -147,7 +149,7 @@ namespace OceanWF.OceanSettings
             this.preySettingsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.preySettingsTextBox.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.preySettingsTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.preySettingsTextBox.Location = new System.Drawing.Point(364, 90);
+            this.preySettingsTextBox.Location = new System.Drawing.Point(388, 74);
             this.preySettingsTextBox.Name = "preySettingsTextBox";
             this.preySettingsTextBox.Size = new System.Drawing.Size(100, 38);
             this.preySettingsTextBox.TabIndex = 7;
@@ -160,7 +162,7 @@ namespace OceanWF.OceanSettings
             this.predatorSettingsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.predatorSettingsTextBox.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.predatorSettingsTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.predatorSettingsTextBox.Location = new System.Drawing.Point(411, 136);
+            this.predatorSettingsTextBox.Location = new System.Drawing.Point(435, 120);
             this.predatorSettingsTextBox.Name = "predatorSettingsTextBox";
             this.predatorSettingsTextBox.Size = new System.Drawing.Size(100, 38);
             this.predatorSettingsTextBox.TabIndex = 8;
@@ -173,7 +175,7 @@ namespace OceanWF.OceanSettings
             this.obstacleSettingsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.obstacleSettingsTextBox.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.obstacleSettingsTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.obstacleSettingsTextBox.Location = new System.Drawing.Point(411, 182);
+            this.obstacleSettingsTextBox.Location = new System.Drawing.Point(435, 166);
             this.obstacleSettingsTextBox.Name = "obstacleSettingsTextBox";
             this.obstacleSettingsTextBox.Size = new System.Drawing.Size(100, 38);
             this.obstacleSettingsTextBox.TabIndex = 9;
@@ -186,10 +188,37 @@ namespace OceanWF.OceanSettings
             this.iterationSettingsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.iterationSettingsTextBox.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iterationSettingsTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.iterationSettingsTextBox.Location = new System.Drawing.Point(411, 228);
+            this.iterationSettingsTextBox.Location = new System.Drawing.Point(435, 258);
             this.iterationSettingsTextBox.Name = "iterationSettingsTextBox";
             this.iterationSettingsTextBox.Size = new System.Drawing.Size(100, 38);
             this.iterationSettingsTextBox.TabIndex = 10;
+            // 
+            // rimuruFishSettingsLabel
+            // 
+            this.rimuruFishSettingsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rimuruFishSettingsLabel.AutoSize = true;
+            this.rimuruFishSettingsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.rimuruFishSettingsLabel.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rimuruFishSettingsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rimuruFishSettingsLabel.Location = new System.Drawing.Point(56, 215);
+            this.rimuruFishSettingsLabel.Name = "rimuruFishSettingsLabel";
+            this.rimuruFishSettingsLabel.Size = new System.Drawing.Size(380, 31);
+            this.rimuruFishSettingsLabel.TabIndex = 11;
+            this.rimuruFishSettingsLabel.Text = "Enter the number of rimurufish:";
+            // 
+            // rimuruFishSettingsTextBox
+            // 
+            this.rimuruFishSettingsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rimuruFishSettingsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(118)))), ((int)(((byte)(158)))));
+            this.rimuruFishSettingsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rimuruFishSettingsTextBox.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rimuruFishSettingsTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rimuruFishSettingsTextBox.Location = new System.Drawing.Point(435, 212);
+            this.rimuruFishSettingsTextBox.Name = "rimuruFishSettingsTextBox";
+            this.rimuruFishSettingsTextBox.Size = new System.Drawing.Size(100, 38);
+            this.rimuruFishSettingsTextBox.TabIndex = 12;
             // 
             // Settings
             // 
@@ -198,7 +227,9 @@ namespace OceanWF.OceanSettings
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(143)))), ((int)(((byte)(194)))));
             this.BackgroundImage = global::OceanWF.Properties.Resources.settingsBack;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(611, 402);
+            this.ClientSize = new System.Drawing.Size(611, 422);
+            this.Controls.Add(this.rimuruFishSettingsTextBox);
+            this.Controls.Add(this.rimuruFishSettingsLabel);
             this.Controls.Add(this.iterationSettingsTextBox);
             this.Controls.Add(this.obstacleSettingsTextBox);
             this.Controls.Add(this.predatorSettingsTextBox);
@@ -231,5 +262,7 @@ namespace OceanWF.OceanSettings
         private System.Windows.Forms.TextBox predatorSettingsTextBox;
         private System.Windows.Forms.TextBox obstacleSettingsTextBox;
         private System.Windows.Forms.TextBox iterationSettingsTextBox;
+        private System.Windows.Forms.Label rimuruFishSettingsLabel;
+        private System.Windows.Forms.TextBox rimuruFishSettingsTextBox;
     }
 }
