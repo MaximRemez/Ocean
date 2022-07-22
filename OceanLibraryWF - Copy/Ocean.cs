@@ -240,6 +240,14 @@ namespace OceanLibrary
 
         #region MainMethods
 
+        /// <summary>
+        /// Method that generates an ocean with user-specified values
+        /// </summary>
+        /// <param name="userObstacle">The number of obstacles that will be generated in the ocean</param>
+        /// <param name="userPrey">The number of preys that will be generated in the ocean</param>
+        /// <param name="userPredator">The number of predators that will be generated in the ocean</param>
+        /// <param name="userNumRimuru">The number of rimurufish that will be generated in the ocean</param>
+        /// <param name="userIteration">The number of iterations the ocean will have</param>
         public void Initialize(uint userObstacle, uint userPrey, uint userPredator, uint userNumRimuru, uint userIteration)
         {
             NumRows = _numRows;
@@ -254,6 +262,9 @@ namespace OceanLibrary
             InitCells(userObstacle, userPrey, userPredator, userNumRimuru, userIteration);
         }
 
+        /// <summary>
+        /// Method that starts a process in the ocean
+        /// </summary>
         public void Run()
         {
             _nowIteration++;
