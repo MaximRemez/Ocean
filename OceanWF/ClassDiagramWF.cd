@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OceanWF.OceanDemonstrate.Ocean" Collapsed="true">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAgCBAgQECCABgEAEACAAFMDAJoBgQAFGEBBBGQCBQE=</HashCode>
+      <FileName>OceanDemonstrate\Ocean.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="myOcean" />
+      <Field Name="oceanDisplay" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OceanWF.OceanMenu.Menu" Collapsed="true">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAABECAABAAQIACAhQACAAAAAAAgQAAAIgAACAA=</HashCode>
+      <FileName>OceanMenu\Menu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="formOcean" />
+      <Field Name="formSettings" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OceanWF.OceanSettings.Settings" Collapsed="true">
+    <Position X="1.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GgAABIAAACACABDACQSQAIQCAAAgQAAAAAACgAoAAYA=</HashCode>
+      <FileName>OceanSettings\Settings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="outputMessage" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OceanLibrary.Ocean" Collapsed="true">
+    <Position X="7.25" Y="1" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+    <ShowAsCollectionAssociation>
+      <Field Name="cells" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OceanLibrary.Cell" Collapsed="true">
+    <Position X="4.5" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="OceanWF.OceanDemonstrate.DisplayOcean" Collapsed="true">
+    <Position X="5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAARAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OceanDemonstrate\DisplayOcean.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OceanLibrary.OceanException.OutputException" Collapsed="true">
+    <Position X="1.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="OceanLibrary.IOceanDisplay" Collapsed="true">
+    <Position X="7.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OceanDemonstrate\IOceanDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
