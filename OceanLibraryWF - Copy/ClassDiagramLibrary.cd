@@ -1,11 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="OceanLibrary.AddElements" Collapsed="true">
+  <Class Name="OceanLibrary.AddElements">
     <Position X="1.5" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>CAAAACIAEAQAAAAAAAQAAAEgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>OceanElements\AddElements.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="randomizer" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="OceanLibrary.CardinalDirections" Collapsed="true">
     <Position X="10.25" Y="2.75" Width="1.5" />
@@ -85,11 +91,37 @@
       <FileName>OceanElements\Tentacle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OceanLibrary.Ocean" Collapsed="true">
+  <Class Name="OceanLibrary.Ocean">
     <Position X="4.5" Y="2.5" Width="1.5" />
+    <Members>
+      <Field Name="_nowIteration" Hidden="true" />
+      <Field Name="_numCols" Hidden="true" />
+      <Field Name="_numIteration" Hidden="true" />
+      <Field Name="_numObstacle" Hidden="true" />
+      <Field Name="_numPredator" Hidden="true" />
+      <Field Name="_numPrey" Hidden="true" />
+      <Field Name="_numRimuruFish" Hidden="true" />
+      <Field Name="_numRows" Hidden="true" />
+      <Field Name="_size" Hidden="true" />
+      <Method Name="AssignCellAt" Hidden="true" />
+      <Method Name="GetCellAt" Hidden="true" />
+      <Method Name="GetNeighborCell" Hidden="true" />
+      <Method Name="InitCells" Hidden="true" />
+      <Property Name="NowIteration" Hidden="true" />
+      <Property Name="NumCols" Hidden="true" />
+      <Property Name="NumIteration" Hidden="true" />
+      <Property Name="NumObstacle" Hidden="true" />
+      <Property Name="NumPredator" Hidden="true" />
+      <Property Name="NumPrey" Hidden="true" />
+      <Property Name="NumRimuruFish" Hidden="true" />
+      <Property Name="NumRows" Hidden="true" />
+      <Method Name="Ocean" Hidden="true" />
+      <Field Name="outputMessage" Hidden="true" />
+      <Method Name="ShowExceptionMessage" Hidden="true" />
+    </Members>
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
       <HashCode>CoEYBAAEIBgAAQAIAEAAAMICQAAAABAAIQQgAAICAEI=</HashCode>

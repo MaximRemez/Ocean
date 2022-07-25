@@ -7,7 +7,7 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAgCBAgQECCABgEAEACAAFMDAJoBgQAFGEBBBGQCBQE=</HashCode>
+      <HashCode>AAgChAgQACGABgUAFACAAFMHAAoBgQAFGEBBhQYGBWE=</HashCode>
       <FileName>OceanDemonstrate\Ocean.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -17,13 +17,17 @@
   </Class>
   <Class Name="OceanWF.OceanMenu.Menu" Collapsed="true">
     <Position X="4.5" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>BAAAAAABECAABAAQIACAhQACAAAAAAAgQAAAIgAACAA=</HashCode>
       <FileName>OceanMenu\Menu.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="formOcean" />
       <Field Name="formSettings" />
+      <Field Name="formOcean" />
     </ShowAsAssociation>
   </Class>
   <Class Name="OceanWF.OceanSettings.Settings" Collapsed="true">
