@@ -82,27 +82,27 @@ namespace OceanWF.OceanDemonstrate
 
                     else if (displayOcean.cells[rows, cols].Image == Constant.defaultPredatorImage)
                     {
-                        dataGridView.Rows[rows].Cells[cols].Value = Ocean._predator;
+                        dataGridView.Rows[rows].Cells[cols].Value = Ocean.predator;
                     }
 
                     else if (displayOcean.cells[rows, cols].Image == Constant.defaultPreyImage)
                     {
-                        dataGridView.Rows[rows].Cells[cols].Value = Ocean._prey;
+                        dataGridView.Rows[rows].Cells[cols].Value = Ocean.prey;
                     }
 
                     else if(displayOcean.cells[rows, cols].Image == Constant.defaultRimuruImage)
                     {
-                        dataGridView.Rows[rows].Cells[cols].Value = Ocean._rimuru;
+                        dataGridView.Rows[rows].Cells[cols].Value = Ocean.rimuru;
                     }
 
                     else if(displayOcean.cells[rows, cols].Image == Constant.defaultObstacleImage)
                     {
-                        dataGridView.Rows[rows].Cells[cols].Value = Ocean._obstacle;
+                        dataGridView.Rows[rows].Cells[cols].Value = Ocean.obstacle;
                     }
 
                     else if(displayOcean.cells[rows, cols].Image == Constant.defaultTentacleImage)
                     {
-                        dataGridView.Rows[rows].Cells[cols].Value = Ocean._fire;
+                        dataGridView.Rows[rows].Cells[cols].Value = Ocean.tentacle;
                     }
 
                 }

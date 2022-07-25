@@ -9,11 +9,11 @@ namespace OceanWF.OceanDemonstrate
     public partial class Ocean : Form
     {
         #region Variables
-        public static Bitmap _predator = new Bitmap(Properties.Resources.pixelPredator);
-        public static Bitmap _prey = new Bitmap(Properties.Resources.pixelPrey);
-        public static Bitmap _obstacle = new Bitmap(Properties.Resources.pixelObstacle);
-        public static Bitmap _rimuru = new Bitmap(Properties.Resources.pixelRimuru);
-        public static Bitmap _fire = new Bitmap(Properties.Resources.pixelTentacle);
+        public static Bitmap predator = new Bitmap(Properties.Resources.pixelPredator);
+        public static Bitmap prey = new Bitmap(Properties.Resources.pixelPrey);
+        public static Bitmap obstacle = new Bitmap(Properties.Resources.pixelObstacle);
+        public static Bitmap rimuru = new Bitmap(Properties.Resources.pixelRimuru);
+        public static Bitmap tentacle = new Bitmap(Properties.Resources.pixelTentacle);
 
         readonly OceanLibrary.Ocean myOcean = new OceanLibrary.Ocean();
         readonly IOceanDisplay oceanDisplay = new DisplayOcean();
@@ -124,30 +124,29 @@ namespace OceanWF.OceanDemonstrate
             {
                 for (int cols = 0; cols < Constant.maxCols; cols++)
                 {
-
-                    if (myOcean.cells[rows, cols].Image == Constant.defaultPreyImage)
-                    {
-                        oceanDataGridView.Rows[rows].Cells[cols].Value = _prey;
-                    }
-
-                    if (myOcean.cells[rows, cols].Image == Constant.defaultPredatorImage)
-                    {
-                        oceanDataGridView.Rows[rows].Cells[cols].Value = _predator;
-                    }
-
-                    if (myOcean.cells[rows, cols].Image == Constant.defaultObstacleImage)
-                    {
-                        oceanDataGridView.Rows[rows].Cells[cols].Value = _obstacle;
-                    }
-
-                    if (myOcean.cells[rows, cols].Image == Constant.defaultRimuruImage)
-                    {
-                        oceanDataGridView.Rows[rows].Cells[cols].Value = _rimuru;
-                    }
-
                     if (myOcean.cells[rows, cols].Image == Constant.defaultCellImage)
                     {
                         oceanDataGridView.Rows[rows].Cells[cols].Value = null;
+                    }
+
+                    else if (myOcean.cells[rows, cols].Image == Constant.defaultPreyImage)
+                    {
+                        oceanDataGridView.Rows[rows].Cells[cols].Value = prey;
+                    }
+
+                    else if (myOcean.cells[rows, cols].Image == Constant.defaultPredatorImage)
+                    {
+                        oceanDataGridView.Rows[rows].Cells[cols].Value = predator;
+                    }
+
+                    else if (myOcean.cells[rows, cols].Image == Constant.defaultObstacleImage)
+                    {
+                        oceanDataGridView.Rows[rows].Cells[cols].Value = obstacle;
+                    }
+
+                    else if (myOcean.cells[rows, cols].Image == Constant.defaultRimuruImage)
+                    {
+                        oceanDataGridView.Rows[rows].Cells[cols].Value = rimuru;
                     }
 
                 }
