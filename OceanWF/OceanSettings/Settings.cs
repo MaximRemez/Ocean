@@ -44,11 +44,11 @@ namespace OceanWF.OceanSettings
         {
             int BackspaceID = 8;
 
-            preySettingsTextBox.MaxLength = 3;
-            predatorSettingsTextBox.MaxLength = 3;
-            obstacleSettingsTextBox.MaxLength = 3;
+            preySettingsTextBox.MaxLength = 4;
+            predatorSettingsTextBox.MaxLength = 4;
+            obstacleSettingsTextBox.MaxLength = 4;
             iterationSettingsTextBox.MaxLength = 4;
-            rimuruFishSettingsTextBox.MaxLength = 3;
+            rimuruFishSettingsTextBox.MaxLength = 4;
 
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != BackspaceID)
             {

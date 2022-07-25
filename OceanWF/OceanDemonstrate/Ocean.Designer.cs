@@ -31,8 +31,13 @@ namespace OceanWF.OceanDemonstrate
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ocean));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.oceanStatisticPanel = new System.Windows.Forms.Panel();
+            this.interavalShowLabel = new System.Windows.Forms.Label();
+            this.minIntervalLabel = new System.Windows.Forms.Label();
+            this.maxIntervalLabel = new System.Windows.Forms.Label();
+            this.intervalLabel = new System.Windows.Forms.Label();
+            this.intervalTrackBar = new System.Windows.Forms.TrackBar();
             this.rimuruShowLabel = new System.Windows.Forms.Label();
             this.rimuruOceanLabel = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
@@ -50,6 +55,7 @@ namespace OceanWF.OceanDemonstrate
             this.oceanPanel = new System.Windows.Forms.Panel();
             this.oceanDataGridView = new System.Windows.Forms.DataGridView();
             this.oceanStatisticPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.intervalTrackBar)).BeginInit();
             this.oceanPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oceanDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +66,11 @@ namespace OceanWF.OceanDemonstrate
             | System.Windows.Forms.AnchorStyles.Right)));
             this.oceanStatisticPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
             this.oceanStatisticPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("oceanStatisticPanel.BackgroundImage")));
+            this.oceanStatisticPanel.Controls.Add(this.interavalShowLabel);
+            this.oceanStatisticPanel.Controls.Add(this.minIntervalLabel);
+            this.oceanStatisticPanel.Controls.Add(this.maxIntervalLabel);
+            this.oceanStatisticPanel.Controls.Add(this.intervalLabel);
+            this.oceanStatisticPanel.Controls.Add(this.intervalTrackBar);
             this.oceanStatisticPanel.Controls.Add(this.rimuruShowLabel);
             this.oceanStatisticPanel.Controls.Add(this.rimuruOceanLabel);
             this.oceanStatisticPanel.Controls.Add(this.progressBar);
@@ -76,6 +87,70 @@ namespace OceanWF.OceanDemonstrate
             this.oceanStatisticPanel.Name = "oceanStatisticPanel";
             this.oceanStatisticPanel.Size = new System.Drawing.Size(1232, 118);
             this.oceanStatisticPanel.TabIndex = 1;
+            // 
+            // interavalShowLabel
+            // 
+            this.interavalShowLabel.AutoSize = true;
+            this.interavalShowLabel.BackColor = System.Drawing.Color.Transparent;
+            this.interavalShowLabel.Font = new System.Drawing.Font("Berlin Sans FB", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.interavalShowLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
+            this.interavalShowLabel.Location = new System.Drawing.Point(161, 3);
+            this.interavalShowLabel.Name = "interavalShowLabel";
+            this.interavalShowLabel.Size = new System.Drawing.Size(47, 23);
+            this.interavalShowLabel.TabIndex = 23;
+            this.interavalShowLabel.Text = "num";
+            this.interavalShowLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // minIntervalLabel
+            // 
+            this.minIntervalLabel.AutoSize = true;
+            this.minIntervalLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(118)))), ((int)(((byte)(158)))));
+            this.minIntervalLabel.Font = new System.Drawing.Font("Berlin Sans FB", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minIntervalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
+            this.minIntervalLabel.Location = new System.Drawing.Point(41, 97);
+            this.minIntervalLabel.Name = "minIntervalLabel";
+            this.minIntervalLabel.Size = new System.Drawing.Size(12, 18);
+            this.minIntervalLabel.TabIndex = 22;
+            this.minIntervalLabel.Text = "1";
+            // 
+            // maxIntervalLabel
+            // 
+            this.maxIntervalLabel.AutoSize = true;
+            this.maxIntervalLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(118)))), ((int)(((byte)(158)))));
+            this.maxIntervalLabel.Font = new System.Drawing.Font("Berlin Sans FB", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxIntervalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
+            this.maxIntervalLabel.Location = new System.Drawing.Point(30, 0);
+            this.maxIntervalLabel.Name = "maxIntervalLabel";
+            this.maxIntervalLabel.Size = new System.Drawing.Size(36, 16);
+            this.maxIntervalLabel.TabIndex = 21;
+            this.maxIntervalLabel.Text = "1000";
+            // 
+            // intervalLabel
+            // 
+            this.intervalLabel.BackColor = System.Drawing.Color.Transparent;
+            this.intervalLabel.Font = new System.Drawing.Font("Berlin Sans FB", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.intervalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
+            this.intervalLabel.Location = new System.Drawing.Point(72, 0);
+            this.intervalLabel.Name = "intervalLabel";
+            this.intervalLabel.Size = new System.Drawing.Size(83, 29);
+            this.intervalLabel.TabIndex = 20;
+            this.intervalLabel.Text = "Interval:";
+            this.intervalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // intervalTrackBar
+            // 
+            this.intervalTrackBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(118)))), ((int)(((byte)(158)))));
+            this.intervalTrackBar.LargeChange = 1;
+            this.intervalTrackBar.Location = new System.Drawing.Point(3, 0);
+            this.intervalTrackBar.Maximum = 1000;
+            this.intervalTrackBar.Minimum = 1;
+            this.intervalTrackBar.Name = "intervalTrackBar";
+            this.intervalTrackBar.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.intervalTrackBar.Size = new System.Drawing.Size(69, 115);
+            this.intervalTrackBar.TabIndex = 19;
+            this.intervalTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.intervalTrackBar.Value = 120;
+            this.intervalTrackBar.Scroll += new System.EventHandler(this.intervalTrackBar_Scroll);
             // 
             // rimuruShowLabel
             // 
@@ -107,9 +182,9 @@ namespace OceanWF.OceanDemonstrate
             // 
             this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar.Location = new System.Drawing.Point(225, 58);
+            this.progressBar.Location = new System.Drawing.Point(288, 58);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(134, 26);
+            this.progressBar.Size = new System.Drawing.Size(103, 26);
             this.progressBar.Step = 1;
             this.progressBar.TabIndex = 16;
             // 
@@ -158,7 +233,7 @@ namespace OceanWF.OceanDemonstrate
             this.iterationShowLabel.BackColor = System.Drawing.Color.Transparent;
             this.iterationShowLabel.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iterationShowLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
-            this.iterationShowLabel.Location = new System.Drawing.Point(142, 49);
+            this.iterationShowLabel.Location = new System.Drawing.Point(214, 49);
             this.iterationShowLabel.Name = "iterationShowLabel";
             this.iterationShowLabel.Size = new System.Drawing.Size(77, 35);
             this.iterationShowLabel.TabIndex = 12;
@@ -170,7 +245,7 @@ namespace OceanWF.OceanDemonstrate
             this.maxValueLabel.BackColor = System.Drawing.Color.Transparent;
             this.maxValueLabel.Font = new System.Drawing.Font("Berlin Sans FB", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maxValueLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
-            this.maxValueLabel.Location = new System.Drawing.Point(271, 33);
+            this.maxValueLabel.Location = new System.Drawing.Point(293, 33);
             this.maxValueLabel.Name = "maxValueLabel";
             this.maxValueLabel.Size = new System.Drawing.Size(98, 22);
             this.maxValueLabel.TabIndex = 11;
@@ -183,7 +258,7 @@ namespace OceanWF.OceanDemonstrate
             this.itearationOceanLabel.BackColor = System.Drawing.Color.Transparent;
             this.itearationOceanLabel.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itearationOceanLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(34)))), ((int)(((byte)(179)))));
-            this.itearationOceanLabel.Location = new System.Drawing.Point(5, 49);
+            this.itearationOceanLabel.Location = new System.Drawing.Point(77, 49);
             this.itearationOceanLabel.Name = "itearationOceanLabel";
             this.itearationOceanLabel.Size = new System.Drawing.Size(146, 35);
             this.itearationOceanLabel.TabIndex = 5;
@@ -239,6 +314,7 @@ namespace OceanWF.OceanDemonstrate
             this.changeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.changeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(118)))), ((int)(((byte)(158)))));
+            this.changeButton.BackgroundImage = global::OceanWF.Properties.Resources.labelback1;
             this.changeButton.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.changeButton.Location = new System.Drawing.Point(35, 466);
@@ -272,14 +348,14 @@ namespace OceanWF.OceanDemonstrate
             this.oceanDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.oceanDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.oceanDataGridView.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(118)))), ((int)(((byte)(158)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(118)))), ((int)(((byte)(158)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.oceanDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(118)))), ((int)(((byte)(158)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(118)))), ((int)(((byte)(158)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.oceanDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.oceanDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.oceanDataGridView.Location = new System.Drawing.Point(0, 0);
             this.oceanDataGridView.Name = "oceanDataGridView";
@@ -311,6 +387,7 @@ namespace OceanWF.OceanDemonstrate
             this.Load += new System.EventHandler(this.Ocean_Load);
             this.oceanStatisticPanel.ResumeLayout(false);
             this.oceanStatisticPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.intervalTrackBar)).EndInit();
             this.oceanPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.oceanDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -335,5 +412,10 @@ namespace OceanWF.OceanDemonstrate
         private System.Windows.Forms.DataGridView oceanDataGridView;
         private System.Windows.Forms.Label rimuruShowLabel;
         private System.Windows.Forms.Label rimuruOceanLabel;
+        private System.Windows.Forms.TrackBar intervalTrackBar;
+        private System.Windows.Forms.Label minIntervalLabel;
+        private System.Windows.Forms.Label maxIntervalLabel;
+        private System.Windows.Forms.Label intervalLabel;
+        private System.Windows.Forms.Label interavalShowLabel;
     }
 }

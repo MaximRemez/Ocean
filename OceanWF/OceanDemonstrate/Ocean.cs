@@ -54,6 +54,11 @@ namespace OceanWF.OceanDemonstrate
             Reset();
         }
 
+        private void intervalTrackBar_Scroll(object sender, EventArgs e)
+        {
+            IntervalScroll();
+        }
+
         private void iterationTimer_Tick(object sender, EventArgs e)
         {
             EventPerTick();
@@ -67,6 +72,8 @@ namespace OceanWF.OceanDemonstrate
         {
             CorrectData();
 
+            intervalTrackBar.Value = Constant.interval;
+            interavalShowLabel.Text = Constant.interval.ToString();
             iterationTimer.Interval = Constant.interval;
 
             preyShowLabel.Text = DataBank.NumPrey.ToString();
@@ -154,12 +161,19 @@ namespace OceanWF.OceanDemonstrate
 
         }
 
+        private void IntervalScroll()
+        {
+            interavalShowLabel.Text = intervalTrackBar.Value.ToString();
+        }
+
         private void EventPerTick()
         {
             if (WasStarted == true)
             {
                 nowIteration++;
                 myOcean.Run();
+
+                iterationTimer.Interval = intervalTrackBar.Value;
 
                 oceanDisplay.CountInfo(myOcean);
                 oceanDisplay.Display(nowIteration, myOcean, oceanDataGridView, preyShowLabel,
