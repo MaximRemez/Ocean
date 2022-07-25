@@ -1,4 +1,5 @@
 ﻿using OceanLibrary;
+using OceanWF.OceanInfo;
 using OceanWF.OceanSettings;
 using System;
 using System.Drawing;
@@ -12,6 +13,7 @@ namespace OceanWF.OceanMenu
 
         Settings formSettings;
         OceanDemonstrate.Ocean formOcean;
+        Info formInfo;
         #endregion
 
         #region Constructor
@@ -68,10 +70,18 @@ namespace OceanWF.OceanMenu
             formSettings.ShowDialog();
         }
 
+        private void infoButton_Click(object sender, EventArgs e)
+        {
+            formInfo = new Info();
+
+            formInfo.ShowDialog();
+        }
+
         private void exitMenuButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
         #endregion
+
     }
 }

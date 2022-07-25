@@ -37,6 +37,7 @@ namespace OceanWF.OceanMenu
             this.titleMenuPictureBox = new System.Windows.Forms.PictureBox();
             this.defaultSettingsButton = new System.Windows.Forms.Button();
             this.menuToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.infoButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.titleMenuPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,6 +123,23 @@ namespace OceanWF.OceanMenu
             this.menuToolTip.BackColor = System.Drawing.Color.Black;
             this.menuToolTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             // 
+            // infoButton
+            // 
+            this.infoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.infoButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.infoButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(4)))), ((int)(((byte)(79)))));
+            this.infoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.infoButton.Font = new System.Drawing.Font("Cooper Black", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoButton.ForeColor = System.Drawing.Color.Black;
+            this.infoButton.Location = new System.Drawing.Point(357, 255);
+            this.infoButton.Name = "infoButton";
+            this.infoButton.Size = new System.Drawing.Size(34, 75);
+            this.infoButton.TabIndex = 4;
+            this.infoButton.Text = "?";
+            this.menuToolTip.SetToolTip(this.infoButton, "information about fish");
+            this.infoButton.UseVisualStyleBackColor = false;
+            this.infoButton.Click += new System.EventHandler(this.infoButton_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -129,6 +147,7 @@ namespace OceanWF.OceanMenu
             this.BackgroundImage = global::OceanWF.Properties.Resources.defaul_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(578, 384);
+            this.Controls.Add(this.infoButton);
             this.Controls.Add(this.defaultSettingsButton);
             this.Controls.Add(this.titleMenuPictureBox);
             this.Controls.Add(this.exitMenuButton);
@@ -151,6 +170,7 @@ namespace OceanWF.OceanMenu
         private System.Windows.Forms.PictureBox titleMenuPictureBox;
         private System.Windows.Forms.Button defaultSettingsButton;
         private System.Windows.Forms.ToolTip menuToolTip;
+        private System.Windows.Forms.Button infoButton;
     }
 }
 
