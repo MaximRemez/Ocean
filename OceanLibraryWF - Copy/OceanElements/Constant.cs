@@ -33,6 +33,6 @@
         public const int indentMidOcean = 21;
         public const int downIndent = 28;
 
-        public const int interval = 1000;
+        public const int interval = 120;
     }
 }
