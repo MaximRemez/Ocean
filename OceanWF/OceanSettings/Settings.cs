@@ -13,7 +13,7 @@ namespace OceanWF.OceanSettings
 
         private uint _numberSumElements = 0;
         private uint _numberIteration = 0;
-        private readonly uint _fieldSize = Constant.maxCols * Constant.maxRows;
+        private readonly uint _fieldSize = (Constant.maxCols-1) * Constant.maxRows;
         #endregion
 
         #region Constructor

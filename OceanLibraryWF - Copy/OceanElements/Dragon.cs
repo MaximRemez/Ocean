@@ -20,6 +20,8 @@
                 _timeToFire = value;
             }
         }
+
+        public static bool wasFired = false;
         #endregion
 
         #region Constructor
@@ -54,7 +56,7 @@
                 _lastNumOfIteration = _myOcean.NowIteration;
             }
 
-            if (TimeToFire == 0)
+            if (TimeToFire == 0 && wasFired == false)
             {
                 Coordinate temp;
 
@@ -68,6 +70,7 @@
                 }
             
                 TimeToFire = Constant.defaultTimeToFire;
+                wasFired = true;
             }
 
         }

@@ -26,7 +26,7 @@
         public const int defaultTimeToFeed = 6;
         public const int defaultTimeToPunch = 15;
         public const int defaultTentacleLife = 1;
-        public const int defaultTimeToFire = 25;
+        public const int defaultTimeToFire = 15;
         public const int defaultFireLife = 1;
 
         public const int indent = 85;

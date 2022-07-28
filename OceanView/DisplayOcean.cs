@@ -232,7 +232,7 @@ namespace OceanView
                 }
 
                 uint numberSumElements = _userNumPredator + _userNumPrey + _userNumObstacles + _userNumRimuruFish;
-                uint fieldSize = Constant.maxCols * Constant.maxRows;
+                uint fieldSize = (Constant.maxCols-1) * Constant.maxRows;
 
                 if (numberSumElements > fieldSize)
                 {

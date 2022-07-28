@@ -60,28 +60,28 @@
             {
                 temp = directions.GetNorthCell(Offset, (Ocean)_myOcean).Offset;
                 tempImage = directions.GetNorthCell(Offset, (Ocean)_myOcean).Image;
-                if (tempImage != Constant.defaultDragonImage && tempImage != Constant.defaultObstacleImage)
+                if (tempImage != Constant.defaultDragonImage && tempImage != Constant.defaultObstacleImage && tempImage != Constant.defaultFireImage)
                 {
                     _myOcean.AssignCellAt(temp, new Tentacle(temp, _myOcean, Constant.defaultTentacleLife));
                 }
               
                 temp = directions.GetSouthCell(Offset, (Ocean)_myOcean).Offset;
                 tempImage = directions.GetSouthCell(Offset, (Ocean)_myOcean).Image;
-                if (tempImage != Constant.defaultDragonImage && tempImage != Constant.defaultObstacleImage)
+                if (tempImage != Constant.defaultDragonImage && tempImage != Constant.defaultObstacleImage && tempImage != Constant.defaultFireImage)
                 {
                     _myOcean.AssignCellAt(temp, new Tentacle(temp, _myOcean, Constant.defaultTentacleLife));
                 }
 
                 temp = directions.GetWestCell(Offset, (Ocean)_myOcean).Offset;
                 tempImage = directions.GetWestCell(Offset, (Ocean)_myOcean).Image;
-                if (tempImage != Constant.defaultDragonImage && tempImage != Constant.defaultObstacleImage)
+                if (tempImage != Constant.defaultDragonImage && tempImage != Constant.defaultObstacleImage && tempImage != Constant.defaultFireImage)
                 {
                     _myOcean.AssignCellAt(temp, new Tentacle(temp, _myOcean, Constant.defaultTentacleLife));
                 }
 
                 temp = directions.GetEastCell(Offset, (Ocean)_myOcean).Offset;
                 tempImage = directions.GetEastCell(Offset, (Ocean)_myOcean).Image;
-                if (tempImage != Constant.defaultDragonImage && tempImage != Constant.defaultObstacleImage)
+                if (tempImage != Constant.defaultDragonImage && tempImage != Constant.defaultObstacleImage && tempImage != Constant.defaultFireImage)
                 {
                     _myOcean.AssignCellAt(temp, new Tentacle(temp, _myOcean, Constant.defaultTentacleLife));
                 }

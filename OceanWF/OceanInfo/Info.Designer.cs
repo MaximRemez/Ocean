@@ -40,11 +40,16 @@ namespace OceanWF.OceanInfo
             this.rimuruPictureBox = new System.Windows.Forms.PictureBox();
             this.tentaclePictureBox = new System.Windows.Forms.PictureBox();
             this.languageButton = new System.Windows.Forms.Button();
+            this.dragonInfoLabel = new System.Windows.Forms.Label();
+            this.dragonPictureBox = new System.Windows.Forms.PictureBox();
+            this.firePictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.preyPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.predatorPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.octopusPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rimuruPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tentaclePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dragonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // preyInfoLabel
@@ -151,7 +156,7 @@ namespace OceanWF.OceanInfo
             this.languageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.languageButton.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.languageButton.ForeColor = System.Drawing.Color.Black;
-            this.languageButton.Location = new System.Drawing.Point(1, 524);
+            this.languageButton.Location = new System.Drawing.Point(3, 615);
             this.languageButton.Name = "languageButton";
             this.languageButton.Size = new System.Drawing.Size(84, 61);
             this.languageButton.TabIndex = 15;
@@ -159,12 +164,46 @@ namespace OceanWF.OceanInfo
             this.languageButton.UseVisualStyleBackColor = false;
             this.languageButton.Click += new System.EventHandler(this.languageButton_Click);
             // 
+            // dragonInfoLabel
+            // 
+            this.dragonInfoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.dragonInfoLabel.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dragonInfoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dragonInfoLabel.Location = new System.Drawing.Point(35, 521);
+            this.dragonInfoLabel.Name = "dragonInfoLabel";
+            this.dragonInfoLabel.Size = new System.Drawing.Size(540, 91);
+            this.dragonInfoLabel.TabIndex = 16;
+            this.dragonInfoLabel.Text = "Random dragon burns a row every 15 iterations";
+            // 
+            // dragonPictureBox
+            // 
+            this.dragonPictureBox.Image = global::OceanWF.Properties.Resources.pixelDragon;
+            this.dragonPictureBox.Location = new System.Drawing.Point(570, 521);
+            this.dragonPictureBox.Name = "dragonPictureBox";
+            this.dragonPictureBox.Size = new System.Drawing.Size(100, 100);
+            this.dragonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dragonPictureBox.TabIndex = 17;
+            this.dragonPictureBox.TabStop = false;
+            // 
+            // firePictureBox
+            // 
+            this.firePictureBox.Image = global::OceanWF.Properties.Resources.pixelFire;
+            this.firePictureBox.Location = new System.Drawing.Point(686, 521);
+            this.firePictureBox.Name = "firePictureBox";
+            this.firePictureBox.Size = new System.Drawing.Size(100, 100);
+            this.firePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.firePictureBox.TabIndex = 18;
+            this.firePictureBox.TabStop = false;
+            // 
             // Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(118)))), ((int)(((byte)(158)))));
-            this.ClientSize = new System.Drawing.Size(800, 587);
+            this.ClientSize = new System.Drawing.Size(800, 677);
+            this.Controls.Add(this.firePictureBox);
+            this.Controls.Add(this.dragonPictureBox);
+            this.Controls.Add(this.dragonInfoLabel);
             this.Controls.Add(this.languageButton);
             this.Controls.Add(this.tentaclePictureBox);
             this.Controls.Add(this.rimuruPictureBox);
@@ -184,6 +223,8 @@ namespace OceanWF.OceanInfo
             ((System.ComponentModel.ISupportInitialize)(this.octopusPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rimuruPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tentaclePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dragonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -200,5 +241,8 @@ namespace OceanWF.OceanInfo
         private System.Windows.Forms.PictureBox rimuruPictureBox;
         private System.Windows.Forms.PictureBox tentaclePictureBox;
         private System.Windows.Forms.Button languageButton;
+        private System.Windows.Forms.Label dragonInfoLabel;
+        private System.Windows.Forms.PictureBox dragonPictureBox;
+        private System.Windows.Forms.PictureBox firePictureBox;
     }
 }

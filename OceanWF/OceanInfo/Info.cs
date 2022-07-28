@@ -25,6 +25,7 @@ namespace OceanWF.OceanInfo
                 predatorInfoLabel.Text = "Хижак з'їдає здобич і гине, якщо не з'їсть протягом 6 ітерацій. Також розмножується кожну 6-ту ітерацію";
                 obstacleInfoLabel.Text = "Перешкодою є восьминіг. Він не рухається і кожні 15 ітерацій вдаряє щупальцями";
                 rimuruInfoLabel.Text = "Риба-Рімуру може з'їсти будь-кого. Вона не розмножується і може загинути тільки від щупалець";
+                dragonInfoLabel.Text = "Випадковий дракон спалює рядок кожні 15 ітерацій";
 
                 languageButton.Text = "Eng";
                 isEnglish = false;
@@ -36,6 +37,7 @@ namespace OceanWF.OceanInfo
                 predatorInfoLabel.Text = "The predator eats the prey and dies if it doesn't eat in 6 iterations. Also divided every 6th iteration";
                 obstacleInfoLabel.Text = "The obstacle is the octopus. He does not move and every 15 iterations he strikes with tentacles";
                 rimuruInfoLabel.Text = "Rimuru fish can eat anyone. It does not reproduce and can die only from tentacles";
+                dragonInfoLabel.Text = "Random dragon burns a row every 15 iterations";
 
                 languageButton.Text = "Ua";
                 isEnglish = true;

@@ -1,4 +1,5 @@
-﻿using OceanLibrary.OceanException;
+﻿using OceanLibrary.OceanElements;
+using OceanLibrary.OceanException;
 using System;
 using System.Windows.Forms;
 
@@ -307,8 +308,11 @@ namespace OceanLibrary
                 for (int column = 0; column < NumCols; column++)
                 {
                     cells[row, column].wasProcessed = false;
+                    
                 }
             }
+
+            Dragon.wasFired = false;
 
         }
         #endregion
