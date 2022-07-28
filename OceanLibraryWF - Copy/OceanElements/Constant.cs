@@ -19,16 +19,20 @@
         public const char defaultObstacleImage = '#';
         public const char defaultRimuruImage = 'R';
         public const char defaultTentacleImage = 't';
+        public const char defaultDragonImage = 'D';
+        public const char defaultFireImage = 'F';
 
         public const int defaultTimeToReproduce = 6;
         public const int defaultTimeToFeed = 6;
         public const int defaultTimeToPunch = 15;
         public const int defaultTentacleLife = 1;
+        public const int defaultTimeToFire = 25;
+        public const int defaultFireLife = 1;
 
         public const int indent = 85;
         public const int indentMidOcean = 21;
         public const int downIndent = 28;
 
-        public const int interval = 120;
+        public const int interval = 1000;
     }
 }

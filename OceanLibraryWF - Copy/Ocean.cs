@@ -18,6 +18,7 @@ namespace OceanLibrary
         private uint _numPrey = Constant.defaultNumPrey;
         private uint _numPredator = Constant.defaultNumPredator;
         private uint _numRimuruFish = Constant.defaultNumRimuru;
+        private uint _numDragon = Constant.maxRows;
 
         private int _numRows = Constant.maxRows;
         private int _numCols = Constant.maxCols;
@@ -143,6 +144,30 @@ namespace OceanLibrary
                     else
                     {
                         _numRimuruFish = value;
+                    }
+                }
+                catch (InvalidNumberElementException numException)
+                {
+                    outputMessage.ShowOnScreen(numException.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
+
+        public uint NumDragon
+        {
+            get { return _numDragon; }
+            set
+            {
+                try
+                {
+                    if (value > _size || value < 0)
+                    {
+                        throw new InvalidNumberElementException();
+                    }
+                    else
+                    {
+                        _numDragon = value;
                     }
                 }
                 catch (InvalidNumberElementException numException)
@@ -302,6 +327,8 @@ namespace OceanLibrary
             NumPredator = userPredator;
             NumRimuruFish = userNumRimuru;
             NumIteration = userIteration;
+
+            NumDragon = (uint)NumRows;
 
             addElements.AddOceanElements(this);
         }

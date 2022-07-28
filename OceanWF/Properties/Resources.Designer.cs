@@ -103,6 +103,26 @@ namespace OceanWF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pixelDragon {
+            get {
+                object obj = ResourceManager.GetObject("pixelDragon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pixelFire {
+            get {
+                object obj = ResourceManager.GetObject("pixelFire", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pixelObstacle {
             get {
                 object obj = ResourceManager.GetObject("pixelObstacle", resourceCulture);

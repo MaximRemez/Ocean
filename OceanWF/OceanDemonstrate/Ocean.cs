@@ -14,6 +14,8 @@ namespace OceanWF.OceanDemonstrate
         public static Bitmap obstacle = new Bitmap(Properties.Resources.pixelObstacle);
         public static Bitmap rimuru = new Bitmap(Properties.Resources.pixelRimuru);
         public static Bitmap tentacle = new Bitmap(Properties.Resources.pixelTentacle);
+        public static Bitmap dragon = new Bitmap(Properties.Resources.pixelDragon);
+        public static Bitmap fire = new Bitmap(Properties.Resources.pixelFire);
 
         readonly OceanLibrary.Ocean myOcean = new OceanLibrary.Ocean();
         readonly IOceanDisplay oceanDisplay = new DisplayOcean();
@@ -154,6 +156,11 @@ namespace OceanWF.OceanDemonstrate
                     else if (myOcean.cells[rows, cols].Image == Constant.defaultRimuruImage)
                     {
                         oceanDataGridView.Rows[rows].Cells[cols].Value = rimuru;
+                    }
+
+                    else
+                    {
+                        oceanDataGridView.Rows[rows].Cells[cols].Value = dragon;
                     }
 
                 }

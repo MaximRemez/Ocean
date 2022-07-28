@@ -1,4 +1,6 @@
-﻿namespace OceanLibrary
+﻿using OceanLibrary.OceanElements;
+
+namespace OceanLibrary
 {
     public class AddElements
     {
@@ -7,6 +9,7 @@
         public void AddOceanElements(Ocean addElements)
         {
             AddEmptyCells(addElements);
+            AddDragon(addElements);
             AddObstacles(addElements);
             AddPrey(addElements);
             AddPredators(addElements);
@@ -41,6 +44,17 @@
                     addMembers.cells[row, column] = temp;
                 }
 
+            }
+        }
+
+        private void AddDragon(Ocean addMembers)
+        {
+            Coordinate empty;
+
+            for (int i = 0; i < addMembers.NumDragon; i++)
+            {
+                empty = new Coordinate(0, i);
+                addMembers.cells[empty.Y, empty.X] = new Dragon(empty, addMembers, Constant.defaultTimeToFire);
             }
         }
 
@@ -90,5 +104,6 @@
                 addMembers.cells[empty.Y, empty.X] = new RimuruFish(empty, addMembers);
             }
         }
+
     }
 }

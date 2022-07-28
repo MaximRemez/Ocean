@@ -24,11 +24,11 @@
 
         #region Constructor
 
-        public Obstacle(Coordinate anOffset, IOceanCells ocean, int timeToFire) : base(anOffset, ocean)
+        public Obstacle(Coordinate anOffset, IOceanCells ocean, int timeToPunch) : base(anOffset, ocean)
         {
             Offset = anOffset;
             _myOcean = ocean;
-            TimeToPunch = timeToFire;
+            TimeToPunch = timeToPunch;
 
             Image = Constant.defaultObstacleImage;
         }
@@ -40,14 +40,15 @@
         {
             if (wasProcessed == false)
             {
-                FireNeighbor();
+                PunchNeighbor();
                 wasProcessed = true;
             }
         }
 
-        private void FireNeighbor()
+        private void PunchNeighbor()
         {
             Coordinate temp;
+            char tempImage;
             if (_myOcean.NowIteration != _lastNumOfIteration)
             {
                 TimeToPunch--;
@@ -58,16 +59,32 @@
             if (TimeToPunch == 0)
             {
                 temp = directions.GetNorthCell(Offset, (Ocean)_myOcean).Offset;
-                _myOcean.AssignCellAt(temp, new Tentacle(temp, _myOcean, Constant.defaultTentacleLife));
-
+                tempImage = directions.GetNorthCell(Offset, (Ocean)_myOcean).Image;
+                if (tempImage != Constant.defaultDragonImage && tempImage != Constant.defaultObstacleImage)
+                {
+                    _myOcean.AssignCellAt(temp, new Tentacle(temp, _myOcean, Constant.defaultTentacleLife));
+                }
+              
                 temp = directions.GetSouthCell(Offset, (Ocean)_myOcean).Offset;
-                _myOcean.AssignCellAt(temp, new Tentacle(temp, _myOcean, Constant.defaultTentacleLife));
+                tempImage = directions.GetSouthCell(Offset, (Ocean)_myOcean).Image;
+                if (tempImage != Constant.defaultDragonImage && tempImage != Constant.defaultObstacleImage)
+                {
+                    _myOcean.AssignCellAt(temp, new Tentacle(temp, _myOcean, Constant.defaultTentacleLife));
+                }
 
                 temp = directions.GetWestCell(Offset, (Ocean)_myOcean).Offset;
-                _myOcean.AssignCellAt(temp, new Tentacle(temp, _myOcean, Constant.defaultTentacleLife));
+                tempImage = directions.GetWestCell(Offset, (Ocean)_myOcean).Image;
+                if (tempImage != Constant.defaultDragonImage && tempImage != Constant.defaultObstacleImage)
+                {
+                    _myOcean.AssignCellAt(temp, new Tentacle(temp, _myOcean, Constant.defaultTentacleLife));
+                }
 
                 temp = directions.GetEastCell(Offset, (Ocean)_myOcean).Offset;
-                _myOcean.AssignCellAt(temp, new Tentacle(temp, _myOcean, Constant.defaultTentacleLife));
+                tempImage = directions.GetEastCell(Offset, (Ocean)_myOcean).Image;
+                if (tempImage != Constant.defaultDragonImage && tempImage != Constant.defaultObstacleImage)
+                {
+                    _myOcean.AssignCellAt(temp, new Tentacle(temp, _myOcean, Constant.defaultTentacleLife));
+                }
 
                 TimeToPunch = Constant.defaultTimeToPunch;
             }

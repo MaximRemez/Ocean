@@ -105,6 +105,16 @@ namespace OceanWF.OceanDemonstrate
                         dataGridView.Rows[rows].Cells[cols].Value = Ocean.tentacle;
                     }
 
+                    else if (displayOcean.cells[rows, cols].Image == Constant.defaultDragonImage)
+                    {
+                        dataGridView.Rows[rows].Cells[cols].Value = Ocean.dragon;
+                    }
+
+                    else if (displayOcean.cells[rows, cols].Image == Constant.defaultFireImage)
+                    {
+                        dataGridView.Rows[rows].Cells[cols].Value = Ocean.fire;
+                    }
+
                 }
             }
         }

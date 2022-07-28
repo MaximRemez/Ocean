@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OceanElements\Dragon.cs" />
+    <Compile Include="OceanElements\DragonFire.cs" />
     <Compile Include="OceanElements\Tentacle.cs" />
     <Compile Include="OceanElements\RimuruFish.cs" />
     <Compile Include="OceanException\InvalidIterationValueException.cs" />

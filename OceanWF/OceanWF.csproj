@@ -133,6 +133,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\pixelDragon.jpg" />
+    <Content Include="Resources\pixelFire.png" />
     <Content Include="Resources\pixelTentacle.jpg" />
     <Content Include="Resources\pixelObstacle.jpg" />
     <Content Include="Resources\pixelPredator.png" />

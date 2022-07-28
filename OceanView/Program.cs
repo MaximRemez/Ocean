@@ -8,8 +8,6 @@ namespace OceanView
     {
         static void Main(string[] args)
         {
-            Console.SetWindowSize(100, 30);
-
             IOceanDisplay elementsDisplay = new DisplayOcean();
             IOceanUI elementsUI = new DisplayOcean();
 
